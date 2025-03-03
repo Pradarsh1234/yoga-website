@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,13 +117,21 @@
         }
 
         @media (max-width: 768px) {
-        .card {
-            width: 18rem; /* Reduces the card size on mobile screens */
-        }
+            .card {
+                width: 18rem; /* Reduces the card size on mobile screens */
+            }
+            .benefits{
+                font-size:large;
+                margin-top: 20%;
+            }
         }
         @media (max-width: 480px) {
             .card {
                 width: 15rem; /* Further reduces the card size on very small screens */
+            }
+            .benefits{
+                font-size:medium;
+                margin-top: 20%;
             }
         }
 
@@ -219,7 +227,7 @@
     </div>
 
     <!-- Cards Section -->
-     <h1>BENIFITS OF YOGA</h1>
+     <h1 class="benefits">BENEFITS OF YOGA</h1>
      <div style="width: 30%; height: 2px; background-color: #343a40; margin:auto"></div>
     <div class="card-container">
         <div class="left-card">
