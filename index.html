@@ -113,7 +113,7 @@
         .card {
             width: 25rem;
             border-width: 0px;
-            box-shadow: 0px 0px 10px #888888;
+            box-shadow: 0px 0px 20px #8888882f;
             transition: all 0.5s ease-in-out;
         }
 
@@ -122,8 +122,11 @@
                 width: 18rem; /* Reduces the card size on mobile screens */
             }
             .benefits{
-                font-size:larger;
+                font-size:25px;
                 margin-top: 20%;
+            }
+            .footer-nav{
+                font-size: medium;
             }
         }
         @media (max-width: 480px) {
@@ -131,13 +134,16 @@
                 width: 15rem; /* Further reduces the card size on very small screens */
             }
             .benefits{
-                font-size:medium;
+                font-size:large;
                 margin-top: 20%;
+            }
+            .footer-nav{
+                font-size: smaller;
             }
         }
 
         .card:hover {
-            box-shadow: 0px 0px 15px #888888;
+            box-shadow: 0px 0px 25px #8888888f;
             transform: scale(1.05); /* Slight zoom effect on hover */
         }
         .left-card {
@@ -154,37 +160,10 @@
 
         .about-div{
             font-family: "Oswald", sans-serif;
-            color: #FAFAFA;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh; /* Full height */
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            overflow: hidden; /* Ensures child elements don't go outside */
-            margin-left: 10%;
-            margin-right: 10%;
-            border-radius: 50%;
+            color: #FAFAFA; 
+            background: linear-gradient(226deg, rgb(252 255 214), rgb(255 0 0 / 0%) 70.71%), linear-gradient(127deg, rgb(144 246 255 / 64%), rgb(255 247 153 / 0%) 70.71%), linear-gradient(336deg, rgb(255 106 208 / 49%), rgb(0 0 255 / 0%) 70.71%);
+            padding-top: 1vw;
         }
-        .about-div::before {
-            content: "";
-            position: absolute;
-            background-attachment: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://www.auromere.com/images/Yoga-Pastel-Sun-FB.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            filter: blur(6px);
-            z-index: -1; /* Sends it behind the content */
-        }   
 
 
     </style>
@@ -226,6 +205,18 @@
         <div style="width: 50%; height: 2px; background-color: #FAFAFA;"></div>
         <p class="hero-sec-par">CONTINUOUSLY EVOLVING.</p>
     </div>
+
+
+
+    <!-- about section -->
+    <div class="about-div">
+        <h1 class="benefits" style="text-shadow: 0px 0px 10px grey; color: #232526;">ABOUT ME</h1>
+        <div style="width: 20%; height: 2px; background-color: #232526; margin:auto"></div>
+            <p class="about-para" style="color:#232526; font-size: larger; padding: 5% 25% 10% 10%; margin-bottom: 0px;">Hi! My name is Shruthi Kumar and I am currently a student at Harvard College. I created this website so I could share with you what I do and how that has made me who I am! <br><br>
+            My high school journey was filled with transformation, self-discovery, and inspiration. If you are just entering high school, I hope this website inspires you to create your own story, embrace your interests and passions, and empowers you to break barriers and influence change!</p>
+    </div>
+
+
 
     <!-- Cards Section -->
      <h1 class="benefits">BENEFITS OF YOGA</h1>
@@ -271,37 +262,34 @@
 
 
 
-    <!-- about section -->
-    <div class="about-div">
-        <h1 style="text-shadow: 0px 0px 10px grey;">ABOUT ME</h1>
-        <div style="width: 30%; height: 2px; background-color: #FAFAFA; margin:auto"></div>
-        <div style="background-color: white; margin-left: 10%; margin-right: 10%; margin-top:2%; border-radius: 50%;">
-            <p class="about-para" style="color:#232526; font-size: larger; padding:10%;  ">Hi! My name is Shruthi Kumar and I am currently a student at Harvard College. I created this website so I could share with you what I do and how that has made me who I am! <br><br>
-            My high school journey was filled with transformation, self-discovery, and inspiration. If you are just entering high school, I hope this website inspires you to create your own story, embrace your interests and passions, and empowers you to break barriers and influence change!</p>
-        </div>
-    </div>
-
-
     <!-- footer section -->
-     <footer class="bg-dark py-5" style="margin-top: 10vw;">
+     <footer class="bg-dark py-5">
         <div class="d-flex flex-column">
-            <div class="p-2" style="background-color: #888888; margin-right: 5vw; margin-left: 5vw;">
+            <div class="p-2 d-flex justify-content-center" style="margin-right: 5vw; margin-left: 5vw; color: rgba(211, 211, 211, 0.63);">
                 <div class="d-flex">
-                    <div class="p-2">Flex item</div>
-                    <div class="p-2">Flex item</div>
-                    <div class="p-2">Flex item</div>
+                    <div class="p-2 footer-nav">Home</div>
+                    <div class="p-2 footer-nav">Pricing</div>
+                    <div class="p-2 footer-nav">Contact</div>
+                    <div class="p-2 footer-nav">Features</div>
                   </div>
             </div>
 
 
             <div class="p-2">
-                <div style="width: 90%; height: 1px; background-color: #fafafaec; margin: auto;"></div>
+                <div style="width: 90%; height: 1px; background-color: #fafafa73; margin: auto;"></div>
             </div>
 
 
-            <div class="p-2">Flex item 3</div>
-          </div>
-     </footer>
+            <div class="p-2" style="color: rgba(211, 211, 211, 0.63); margin-right: 5vw; margin-left: 5vw;">
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="mr-auto p-2 bd-highlight footer-nav">YOGA</div>
+                    <div class="p-2 bd-highlight footer-nav">Instagram</div>
+                    <div class="p-2 bd-highlight footer-nav">whatsApp</div>
+                    <div class="p-2 bd-highlight footer-nav">Facebook</div>
+                  </div>    
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
