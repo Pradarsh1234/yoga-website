@@ -177,7 +177,27 @@
             font-weight: 900;
             font-style: italic;
         }
+        .image-sec {
+            flex: 1;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateX(100%);
+            z-index: 1;
+            transition: transform 1s ease-in-out; /* Smooth transition */
+        }
 
+        .visible {
+            transform: translateX(0); /* Moves it into view */
+            transform: translateY(-50%);
+        }
+
+        .image{
+            margin-left: 550px; 
+            object-fit: cover; 
+            opacity: 0.9; 
+            padding: 10%;
+        }
 
     </style>
 </head>
@@ -233,9 +253,8 @@
         </div>
     
         <!-- Image Section -->
-        <div style="flex: 1; position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 1;">
-            <img src="yoga1.png" class="image" alt="Yoga Image" 
-                style="margin-left: 550px; object-fit: cover; opacity: 0.9; padding: 10%;">
+        <div class="image-sec">
+            <img src="yoga1.png" class="image" alt="Yoga Image">
         </div>
     </div>
     
@@ -340,6 +359,26 @@
     
             window.addEventListener('scroll', handleScroll);
         });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            function handleScroll() {
+                let triggerHeight = window.innerHeight * 0.9; // 30% of viewport height
+                let imagesec = document.querySelector(".image-sec");
+
+                if (imagesec) {
+                    let imagesecpos = imagesec.getBoundingClientRect().top;
+
+                    if (imagesecpos < triggerHeight) {
+                        imagesec.classList.add("visible");
+                    }
+                }
+            }
+
+            window.addEventListener("scroll", handleScroll);
+            handleScroll(); // Run on page load in case it's already in view
+        });
+
     </script>
     
 </body>
