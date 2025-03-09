@@ -116,59 +116,7 @@
             box-shadow: 0px 0px 20px #8888882f;
             transition: all 0.5s ease-in-out;
         }
-
-        @media (max-width: 600px) {
-            .card {
-                width: 18rem; /* Reduces the card size on mobile screens */
-            }
-            .benefits{
-                font-size:25px;
-                margin-top: 20%;
-            }
-            .footer-nav{
-                font-size: medium;
-            }
-            .image{
-                margin-right: -150px;
-            }
-            .image-logo{
-                width: 10vw !important;
-            }
-            
-        }
-        @media (max-width: 480px) {
-            .card {
-                width: 15rem; /* Further reduces the card size on very small screens */
-            }
-            .benefits{
-                font-size:large;
-                margin-top: 20%;
-            }
-            .footer-nav{
-                font-size: smaller;
-            }
-            #carouselExampleIndicators {
-                margin-top: 10% !important;
-                width: 95% !important; /* Adjust for smaller screens */
-                margin-bottom: 10% !important;
-            }
-            .carousel-inner {
-                height: 60vw !important; /* Responsive height */
-            }
-            .carousel-item {
-                height: 100% !important;
-            }
-            .carousel-item img {
-                width: 100% !important;
-                height: 100% !important;
-                object-fit: cover !important; /* Ensures uniform image sizes */
-                border-radius: 10px !important;
-            }
-            .image-logo{
-                width: 10vw !important;
-            }
-        }
-
+        
         .card:hover {
             box-shadow: 0px 0px 25px #8888888f;
             transform: scale(1.05); /* Slight zoom effect on hover */
@@ -289,6 +237,87 @@
         }
 
 
+        .div-below-cards{
+            height: 30vw; 
+            /* background: linear-gradient(135deg, #7111cb, #2575fc);  */
+            background-image: url(background-below-cards.jpg);
+            background-position: 70% 0px;
+            background-attachment: fixed;
+            margin-bottom: 5%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            color: #f8f9fa;
+
+        }
+
+
+        @media (max-width: 700px) {
+            .card {
+                width: 18rem; /* Reduces the card size on mobile screens */
+            }
+            .benefits{
+                font-size:25px;
+                margin-top: 20%;
+            }
+            .footer-nav{
+                font-size: medium;
+            }
+            .image{
+                margin-right: -150px;
+            }
+            .image-logo{
+                width: 10vw !important;
+            }
+            
+        }
+        @media (min-width: 481px) and (max-width: 750px) {
+            .div-below-cards {
+                height: 45vw !important;  
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .card {
+                width: 15rem; /* Further reduces the card size on very small screens */
+            }
+            .benefits{
+                font-size: large;
+                margin-top: 20%;
+            }
+            .footer-nav{
+                font-size: smaller;
+            }
+            #carouselExampleIndicators {
+                margin-top: 10% !important;
+                width: 95% !important; /* Adjust for smaller screens */
+                margin-bottom: 10% !important;
+            }
+            .carousel-inner {
+                height: 60vw !important; /* Responsive height */
+            }
+            .carousel-item {
+                height: 100% !important;
+            }
+            .carousel-item img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important; /* Ensures uniform image sizes */
+                border-radius: 10px !important;
+            }
+            .image-logo{
+                width: 10vw !important;
+            }
+            .para-under-cards-sec{
+                font-size: 10px;
+            }
+            .div-below-cards{
+            height: 45vw;
+            }
+        }
+
+
 
     </style>
 </head>
@@ -327,7 +356,7 @@
     <div class="image-container">
         <h1>KALPANA</h1>
         <div style="width: 50%; height: 2px; background-color: #FAFAFA;"></div>
-        <p class="hero-sec-par">CONTINUOUSLY EVOLVING.</p>
+        <p class="hero-sec-par" style="margin-bottom: 0px !important;">CONTINUOUSLY EVOLVING.</p>
     </div>
 
 
@@ -401,6 +430,11 @@
                 </div>
             </div>
         </div>
+    </div>
+
+
+    <div class="div-below-cards">
+        <p class="para-under-cards-sec" style="letter-spacing: 2vw;">INNER PEACE</p>
     </div>
 
 
