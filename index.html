@@ -102,10 +102,22 @@
             max-width: 90vw; /* Prevents stretching too much */
             margin: 5% auto; /* Centers the container */
         }
+
         .left-card, .right-card {
             display: flex;
             flex-direction: column;
-            gap: 3vw; 
+            gap: 3vw;
+        }
+
+        /* Initial states for each card */
+        .lc1, .lc2 {
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+
+        .rc1, .rc2 {
+            transform: translateX(100%);
             opacity: 0;
             transition: transform 1s ease-in-out, opacity 1s ease-in-out;
         }
@@ -122,12 +134,6 @@
             box-shadow: 0px 0px 25px #8888888f;
             transform: scale(1.05); /* Slight zoom effect on hover */
         }
-        .left-card {
-            transform: translateX(-100%);
-        }
-        .right-card {
-            transform: translateX(100%);
-        }
         .show {
             opacity: 1;
             transform: translateX(0);
@@ -137,6 +143,7 @@
         .about-div{
             font-family: "Oswald", sans-serif;
             color: #FAFAFA; 
+            /* background-color: rgb(233, 233, 233); */
             background: linear-gradient(226deg, rgb(252 255 214), rgb(255 0 0 / 0%) 70.71%), linear-gradient(127deg, rgb(144 246 255 / 64%), rgb(255 247 153 / 0%) 70.71%), linear-gradient(336deg, rgb(255 106 208 / 49%), rgb(0 0 255 / 0%) 70.71%);
             padding-top: 1vw;
         }
@@ -263,7 +270,7 @@
             overflow-x: auto;
             scroll-behavior: smooth;
             padding: 10px;
-            padding-top: 50px;
+            padding-top: 60px;
             scrollbar-width: none; /* For Firefox */
             -ms-overflow-style: none; /* For Internet Explorer and Edge */
         }
@@ -438,7 +445,7 @@
      <div style="width: 30%; height: 2px; background-color: #343a40; margin:auto"></div>
     <div class="card-container">
         <div class="left-card">
-            <div class="card">
+            <div class="card lc1">
                 <div>
                     <img class="card-img-top" src="https://www.sleepfoundation.org/wp-content/uploads/2021/01/yoga-outside.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -448,7 +455,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card lc2">
                 <img class="card-img-top" src="https://media.istockphoto.com/id/1586678411/nl/vector/print.jpg?s=612x612&w=0&k=20&c=xwxVftpH12watA19TxQB9ZAOsfoIBft1aDO79WcYFdM=">
                 <div class="card-body">
                   <p class="card-text"><span class="about-span">Reduces Stress and Anxiety:</span><br><br>Yoga incorporates deep breathing and meditation, which activate the body's relaxation response. This helps lower stress hormones, calm the mind, and promote mental well-being, making it an effective tool for managing anxiety and daily stress.</p>
@@ -458,14 +465,14 @@
 
 
         <div class="right-card">
-            <div class="card">
+            <div class="card rc1">
                 <img class="card-img-top" src="https://images.pexels.com/photos/355863/pexels-photo-355863.jpeg?auto=compress&cs=tinysrgb&w=600">
                 <div class="card-body">
                   <p class="card-text"><span class="about-span">Boosts Strength and Balance:</span><br><br>Many yoga poses require the engagement of core and stabilizing muscles, improving strength and balance. Over time, this enhances physical endurance and coordination, benefiting athletes and individuals of all fitness levels.</p>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card rc2">
                 <div>
                     <img class="card-img-top" src="https://images.pexels.com/photos/8173429/pexels-photo-8173429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image cap">
                     <div class="card-body">
@@ -496,13 +503,66 @@
                     <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
                 </div>
             </div>
-            <div class="card1 p-3">Card 2</div>
-            <div class="card1 p-3">Card 3</div>
-            <div class="card1 p-3">Card 4</div>
-            <div class="card1 p-3">Card 5</div>
-            <div class="card1 p-3">Card 6</div>
-            <div class="card1 p-3">Card 7</div>
-            <div class="card1 p-3">Card 8</div>
+            <div class="card1 p-3">
+                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
+                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
+                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
+                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
+                </div>
+            </div>
+            <div class="card1 p-3">
+                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
+                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
+                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
+                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
+                </div>
+            </div>
+            <div class="card1 p-3">
+                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
+                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
+                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
+                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
+                </div>
+            </div>
+            <div class="card1 p-3">
+                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
+                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
+                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
+                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
+                </div>
+            </div>
+            <div class="card1 p-3">
+                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
+                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
+                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
+                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
+                </div>
+            </div>
         </div>
         <div class="arrow-container">
             <button class="btn btn-secondary" onclick="scrollCards(-1)"><i class="bi bi-arrow-left"></i></button>
@@ -558,23 +618,22 @@
         document.addEventListener("DOMContentLoaded", function() {
             function handleScroll() {
                 let triggerHeight = window.innerHeight * 0.7; // 30% of viewport height
-                let leftCard = document.querySelector('.left-card');
-                let rightCard = document.querySelector('.right-card');
-                
-                // Get their positions relative to viewport
-                let leftCardPos = leftCard.getBoundingClientRect().top;
-                let rightCardPos = rightCard.getBoundingClientRect().top;
-    
-                if (leftCardPos < triggerHeight) {
-                    leftCard.classList.add('show');
-                }
-                if (rightCardPos < triggerHeight) {
-                    rightCard.classList.add('show');
-                }
+
+                let cards = document.querySelectorAll('.lc1, .lc2, .rc1, .rc2');
+
+                cards.forEach(card => {
+                    let cardPos = card.getBoundingClientRect().top;
+
+                    if (cardPos < triggerHeight) {
+                        card.classList.add('show');
+                    }
+                });
             }
-    
+
             window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Run once to check if elements are already in view on load
         });
+
 
 
         document.addEventListener("DOMContentLoaded", function () {
