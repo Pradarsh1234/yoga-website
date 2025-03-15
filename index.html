@@ -358,9 +358,9 @@
             height: 85vw;
             }
         }
-         
-
-
+        .inner-box{
+            color: white;
+        }
 
 
     </style>
@@ -401,10 +401,41 @@
             </ul>
         </div>
     </nav>
+
+
+    <div style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-around;
+        background: linear-gradient(135deg, #232526, #414345);
+        height: 150px;
+        width: 50px;
+        position: fixed;
+        top: 20%;
+        left: 5%;
+        z-index: 50;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    ">
+        <a href="https://api.whatsapp.com/send/?phone=9884177941&text&type=phone_number&app_absent=0">
+            <div class="inner-box" style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                <img src="whatsapp-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
+            </div>
+        </a>
+        <a href="https://www.instagram.com/kalpanakathirvelu/#">
+            <div class="inner-box" style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px;">
+                <img src="instagram-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
+            </div>
+        </a>
+        <a href="https://www.facebook.com/share/19CoFxqLmc/">
+            <div class="inner-box" style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px ;"><img src="facebook-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;"></div>
+        </a>
+    </div>
     
 
     <!-- Hero Section -->
-    <div class="image-container">
+    <div class="image-container" style="z-index: 100;">
         <h1>KALPANA</h1>
         <div style="width: 50%; height: 2px; background-color: #FAFAFA;"></div>
         <p class="hero-sec-par" style="margin-bottom: 0px !important;">CONTINUOUSLY EVOLVING.</p>
