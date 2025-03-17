@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <title>KAL's YOGA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Lexend", sans-serif;
+    }
+
+    .inner-sec {
+        display: flex;
+      background-color: rgb(240, 240, 240);
+      width: 80%;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      justify-content: space-around;
+    }
+
+    .typing {
+      font-family: monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline; /* Ensures cursor stays on the same line */
+    }
+
+    @media (max-width: 480px) {
+      .inner-sec {
+        background-color: transparent;
+        width: 100%;
+        box-shadow: none;
+      }
+    }
+    @media (max-width: 900px){
+        .inner-sec{
+            flex-direction: column;
+        }
+        .left-div{
+            width: 100% !important;
+        }
+    }
+  </style>
+</head>
+<body>
+  <section style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div class="inner-sec">
+      <div class="left-div" style="padding: 50px; width: 60%;">
+        <p style="margin-bottom: -20px; padding-left: 70px; color: rgba(20, 20, 20, 0.623);">Hello, I'm</p>
+        <h1 class="lexend-font" style="font-size:50px; font-weight: 200;margin: 0px; padding: 0px;line-height: 50px;">
+          <span style="font-size: 100px; font-weight: 100;">P</span>radarsh S
+        </h1>
+        <p style="padding-left: 10px;">And I'm a <span class="typing"></span></p>
+        <p style="color: rgba(0, 0, 0, 0.692); font-size: small;">I am a passionate Frontend Developer with a strong eye for design and a focus on creating seamless user experiences. With expertise in HTML, CSS, JavaScript, and modern frameworks, I specialize in building responsive, interactive, and visually appealing websites. My goal is to craft websites that are not only functional but also engaging, ensuring a smooth and intuitive experience for users.<br><br>
+
+            I am always open to freelance projects and collaborations, helping individuals and businesses bring their ideas to life through well-designed web solutions. Whether it’s a personal portfolio, business website, or an interactive web app, I can create tailored solutions to meet your needs. Let’s work together to build something amazing!</p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; margin-right: 50px;">
+        <!-- <img src="undraw-web.svg" class="img-fluid" alt="Responsive image"> -->
+        <img class="undraw" src="undraw-web.svg" style="width: 400px;"> 
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed('.typing', {
+      strings: ["web developer.", "UI/UX designer.", "problem solver."],
+      typeSpeed: 50,
+      backSpeed: 30,
+      showCursor: true, 
+      loop: true
+    });
+  </script>
+</body>
+</html>
