@@ -1,733 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <title>KAL's YOGA</title>
-    <style>
-        html,body{
-            overflow-x: hidden;
-            width: 100%;
-        }
-        .lexend-font {
-            font-family: "Lexend", sans-serif;
-            font-optical-sizing: auto;
-            font-style: normal;
-        }
-        .navbar-custom {
-            background: linear-gradient(to right, #232526, #414345);
-        }
-        .navbar-custom .navbar-brand, 
-        .navbar-custom .nav-link {
-            color: #f8f9fa !important;
-        }
-        .navbar-custom .nav-link:hover {
-            color: #ffcc00 !important;
-        }
-        .dropdown-menu {
-            background-color: #343a40;
-        }
-        .dropdown-menu .dropdown-item {
-            color: #ffffff !important;
-        }
-        .dropdown-menu .dropdown-item:hover {
-            background-color: #495057 !important;
-        }
-        
-        .navbar-toggler {
-            border-color: rgba(255, 255, 255, 0.8);
-        }
-        .navbar-toggler-icon {
-            background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.85)" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <title>KAL's YOGA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Lexend", sans-serif;
+    }
 
-        .image-container {
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh; /* Full height */
-            display: flex;
+    .inner-sec {
+        display: flex;
+      background-color: rgb(240, 240, 240);
+      width: 80%;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      justify-content: space-around;
+    }
+
+    .typing {
+      font-family: monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline; /* Ensures cursor stays on the same line */
+    }
+
+    @media (max-width: 480px) {
+      .inner-sec {
+        background-color: transparent;
+        width: 100%;
+        box-shadow: none;
+      }
+    }
+    @media (max-width: 900px){
+        .inner-sec{
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            overflow: hidden; /* Ensures child elements don't go outside */
         }
-
-        .image-container::before {
-            content: "";
-            position: absolute;
-            background-attachment: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://www.auromere.com/images/Yoga-Pastel-Sun-FB.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            filter: blur(6px);
-            z-index: -1; /* Sends it behind the content */
+        .left-div{
+            width: 100% !important;
         }
-        .image-container h1 {
-            color: #FAFAFA;
-            font-family: "Oswald", sans-serif;
-            font-weight: bolder;
-            font-size: 10vw;
-            text-shadow: 0px 0px 5px grey;
-            margin: 0;
-        }
-        h1{
-            text-align: center;
-            margin-top: 5%;
-        }
-        .hero-sec-par {
-            color: #FAFAFA;
-            font-family: "Oswald", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-            padding-top: 0.5%;
-        }
-
-        .card-container {
-            display: flex;
-            justify-content: center; /* Centers the cards horizontally */
-            align-items: center; /* Aligns cards vertically */
-            gap: 5vw; /* Adds a responsive space between cards */
-            flex-wrap: wrap; /* Ensures wrapping on smaller screens */
-            max-width: 90vw; /* Prevents stretching too much */
-            margin: 5% auto; /* Centers the container */
-        }
-
-        .left-card, .right-card {
-            display: flex;
-            flex-direction: column;
-            gap: 3vw;
-        }
-
-        /* Initial states for each card */
-        .lc1, .lc2 {
-            transform: translateX(-100%);
-            opacity: 0;
-            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-        }
-
-        .rc1, .rc2 {
-            transform: translateX(100%);
-            opacity: 0;
-            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-        }
-
-
-        .card {
-            width: 25rem;
-            border-width: 0px;
-            box-shadow: 0px 0px 20px #8888882f;
-            transition: all 0.7s ease-in-out;
-        }
-        
-        .card:hover {
-            box-shadow: 0px 0px 25px #8888888f;
-            transform: scale(1.05); /* Slight zoom effect on hover */
-        }
-        .show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-
-        .about-div{
-            color: #FAFAFA; 
-            /* background-color: rgb(233, 233, 233); */
-            background: linear-gradient(226deg, rgb(252 255 214), rgb(255 0 0 / 0%) 70.71%), linear-gradient(127deg, rgba(196, 255, 118, 0.64), rgb(255 247 153 / 0%) 70.71%), linear-gradient(336deg, rgba(250, 233, 80, 0.49), rgb(0 0 255 / 0%) 70.71%); 
-            padding-top: 1vw;
-        } 
-        .about-span{
-            font-weight: 900;
-        }
-        .button-about{
-            font-family:Arial, Helvetica, sans-serif;
-            color: grey;
-            background-color: white; 
-            border-radius: 20px; 
-            border: 0px;
-            box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.507);
-            width: 100px;
-            transition: 500ms;
-        }
-        .button-about:hover{
-            background-color: grey;
-            box-shadow: 0px 0px 5px rgba(83, 83, 83, 0.877);
-            color: white;
-            width: 120px;
-        }
-        .button-container {
-            display: flex;
-            gap: 8px;
-            align-items: center; /* Align button and icon */
-            justify-content: center; /* Center them together */
-            width: 30%;
-            margin: auto;
-            margin-bottom: 10%;
-        }
-
-        .arrow-icon {
-            width: 16px !important;   /* Fixed width */
-            height: 16px !important;
-            flex-shrink: 0; 
-            color: rgb(27, 27, 27);
-            transition: 500ms;
-        }
-
-        .button-container:hover .arrow-icon {
-            color: grey;
-            transform: translateX(5px); /* Move the arrow slightly on hover */
-        }
-
-        .image-sec {
-            flex: 1;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateX(100%);
-            z-index: 1;
-            transition: transform 1s ease-in-out; /* Smooth transition */
-        }
-
-        .visible {
-            transform: translateX(0); /* Moves it into view */
-            transform: translateY(-60%);
-        }
-
-        .image{
-            margin-left: 0px; 
-            object-fit: cover; 
-            opacity: 0.9; 
-            padding: 10%;
-        }
-
-        .map-section{
-            display: flex; 
-            justify-content: center;
-            align-items: center;
-            gap: 100px;
-            height: 80vh; 
-            width: 100%; 
-            background-color: #343a40;
-            position: relative; 
-            z-index: 100;
-        }
-        .map-button{
-            color: black;
-            background-color: white; 
-            text-decoration: none !important;
-            text-align: center;
-            border: 0px solid; 
-            width: 120px; 
-            border-radius: 50vw;
-            padding-top: 3px;
-            padding-bottom: 4px;
-            text-decoration: none;
-            align-items: center;
-            transition: 500ms;
-        }
-        .map-button:hover{
-            color: white;
-            background-color: black;
-            cursor: pointer;
-            transform: scale(1.1);
-        }
-        .div-below-cards{
-             height: 30vw; 
-            background-image: url(background-below-cards.jpg);
-            background-position: center;
-            background-attachment: fixed;
-            background-size: cover;  /* Ensures the image covers the div */
-            margin-bottom: 5%; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            color: #f8f9fa;
-        }
-        .card-container {
-            position: relative;
-            overflow: hidden;
-            width: 80%;
-            margin: 50px auto;
-            padding-bottom: 50px; /* Space for arrows */
-        }
-        .card-wrapper {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 10px;
-            padding-top: 60px;
-            scrollbar-width: none; /* For Firefox */
-            -ms-overflow-style: none; /* For Internet Explorer and Edge */
-        }
-        .card-wrapper::-webkit-scrollbar {
-            display: none; /* For Chrome, Safari, and Opera */
-        }
-        .card1 {
-            min-width: 300px;
-            height: 200px;
-            background: white;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            border-radius: 8px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        .arrow-container {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            display: flex;
-            gap: 10px;
-        }
-
-        @media (max-width: 700px) {
-            .card {
-                width: 18rem; /* Reduces the card size on mobile screens */
-            }
-            .benefits{
-                font-size:25px;
-                margin-top: 20%;
-            }
-            .footer-nav{
-                font-size: medium;
-            }
-            .image{
-                margin-right: -150px;
-            }
-            .image-logo{
-                width: 10vw !important;
-            }
-            .map-section{
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-            
-        }
-        @media (min-width: 481px) and (max-width: 900px) {
-            .div-below-cards {
-                height: 65vw !important;  
-            }
-        }
-
-
-        @media (max-width: 480px) {
-            .card {
-                width: 15rem; /* Further reduces the card size on very small screens */
-            }
-            .benefits{
-                font-size: large;
-                margin-top: 20%;
-            }
-            .footer-nav{
-                font-size: smaller;
-            }
-            .image-logo{
-                width: 10vw !important;
-            }
-            .para-under-cards-sec{
-                font-size: 10px;
-            }
-            .div-below-cards{
-            height: 85vw;
-            }
-            .map-section{
-                height: 90vh !important;
-                padding-top: 300px;
-                padding-bottom: 300px;
-            }
-            .map{
-                width: 300px !important;
-            }
-        }
-        .inner-box{
-            color: white;
-        }
-
-
-    </style>
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <img src="yoga_logo.png" class="img-fluid image-logo" alt="..." style="width: 4vw;">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pricing.html">Pricing</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                        Contact
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="https://api.whatsapp.com/send/?phone=9884177941&text&type=phone_number&app_absent=0">WhatsApp</a>
-                        <a class="dropdown-item" href="https://www.instagram.com/kalpanakathirvelu/#">Instagram</a>
-                        <a class="dropdown-item" href="https://www.facebook.com/share/19CoFxqLmc/">Facebook</a>
-                    </div>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto" style="color: #f8f9fa; opacity: 0.5;">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Creator</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <section style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div class="inner-sec">
+      <div class="left-div" style="padding: 50px; width: 60%;">
+        <p style="margin-bottom: -20px; padding-left: 70px; color: rgba(20, 20, 20, 0.623);">Hello, I'm</p>
+        <h1 class="lexend-font" style="font-size:50px; font-weight: 200;margin: 0px; padding: 0px;line-height: 50px;">
+          <span style="font-size: 100px; font-weight: 100;">P</span>radarsh S
+        </h1>
+        <p style="padding-left: 10px;">And I'm a <span class="typing"></span></p>
+        <p style="color: rgba(0, 0, 0, 0.692); font-size: small;">I am a passionate Frontend Developer with a strong eye for design and a focus on creating seamless user experiences. With expertise in HTML, CSS, JavaScript, and modern frameworks, I specialize in building responsive, interactive, and visually appealing websites. My goal is to craft websites that are not only functional but also engaging, ensuring a smooth and intuitive experience for users.<br><br>
 
-
-    <div style="
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        justify-content: space-around;
-        background: linear-gradient(135deg, #232526, #414345);
-        height: 150px;
-        width: 50px;
-        position: fixed;
-        bottom: 10%;
-        left: 5%;
-        z-index: 50;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    ">
-        <a href="https://api.whatsapp.com/send/?phone=9884177941&text&type=phone_number&app_absent=0">
-            <div class="inner-box" style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px; border-top-left-radius: 15px; border-top-right-radius: 15px;">
-                <img src="whatsapp-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
-            </div>
-        </a>
-        <a href="https://www.instagram.com/kalpanakathirvelu/#">
-            <div class="inner-box" style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px;">
-                <img src="instagram-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
-            </div>
-        </a>
-        <a href="https://www.facebook.com/share/19CoFxqLmc/">
-            <div class="inner-box" style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px ;"><img src="facebook-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;"></div>
-        </a>
+            I am always open to freelance projects and collaborations, helping individuals and businesses bring their ideas to life through well-designed web solutions. Whether it’s a personal portfolio, business website, or an interactive web app, I can create tailored solutions to meet your needs. Let’s work together to build something amazing!</p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; margin-right: 50px;">
+        <!-- <img src="undraw-web.svg" class="img-fluid" alt="Responsive image"> -->
+        <img class="undraw" src="undraw-web.svg" style="width: 400px;"> 
+      </div>
     </div>
-    
+  </section>
 
-    <!-- Hero Section -->
-    <div class="image-container" style="z-index: 100;">
-        <h1>KALPANA</h1>
-        <div style="width: 50%; height: 2px; background-color: #FAFAFA;"></div>
-        <p class="hero-sec-par" style="margin-bottom: 0px !important;">CONTINUOUSLY EVOLVING.</p>
-    </div>
-
-
-
-    <!-- about section -->
-    <div class="about-div" style="display: flex; position: relative; align-items: center; overflow: hidden;">
-        <div class="about-inner" style="flex: 1; z-index: 2; padding: 0% 15% 2% 0%;">
-            <h1 class="benefits" style="text-shadow: 0px 0px 10px grey; color: #232526;">ABOUT ME</h1>
-            <div style="width: 20%; height: 2px; background-color: #232526; margin:auto"></div>
-            <p class="about-para lexend-font" style="color:#232526; font-size: larger; padding: 5% 10%; margin-bottom: 0px; text-shadow: 0px 0px 5px white;">
-                Hi! My name is Shruthi Kumar and I am currently a student at Harvard College. I created this website so I could share with you what I do and how that has made me who I am! <br><br>
-                My high school journey was filled with transformation, self-discovery, and inspiration. If you are just entering high school, I hope this website inspires you to create your own story, embrace your interests and passions, and empowers you to break barriers and influence change!
-            </p>
-            <a href="pricing.html" style="text-decoration: none;">
-                <div class="button-container">
-                    <button type="button" class="btn button-about">PRICE</button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right arrow-icon" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                    </svg>
-                </div>
-            </a>
-            
-        </div>
-        <!-- Image Section -->
-        <div class="image-sec">
-            <img src="yoga-pose1.png" class="image" alt="Yoga Image">
-        </div>
-    </div>
-
-    <!-- map-section -->
-    <div class="map-section lexend-font">
-        <div style="color: white; padding-left: 10%;display: flex;flex-direction: column; justify-content: center;">
-            <h1 style="text-align: left;">Come visit us</h1>
-            <p style="color: rgba(255, 255, 255, 0.349); height: 100%;">Located at heart of chennai.<br>For offline students we are open from<br> 9am to 5pm</p>
-            <a href="https://maps.app.goo.gl/8ffcVx3HtLrEkAe2A" class="map-button">
-                Open map
-            </a>
-        </div>
-        <div style="border: 0px solid;">
-            <iframe class="map" style="height: 300px;width:400px; border-radius: 10px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.374920277318!2d80.25296187381214!3d13.075408912596387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52660ca47bead9%3A0x79a6cf3618925308!2sChinna%20St%2C%20Egmore%2C%20Chennai%2C%20Tamil%20Nadu%20600008!5e0!3m2!1sen!2sin!4v1742043754395!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
-
-
-    <!-- Cards Section -->
-     <h1 class="benefits">BENEFITS OF YOGA</h1>
-     <div style="width: 30%; height: 2px; background-color: #343a40; margin:auto"></div>
-    <div class="card-container">
-        <div class="left-card">
-            <div class="card lc1">
-                <div>
-                    <img class="card-img-top" src="https://www.sleepfoundation.org/wp-content/uploads/2021/01/yoga-outside.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text lexend-font"><span class="about-span">Improves Flexibility and Posture:</span><br><br>Regular yoga practice helps stretch and lengthen muscles, improving overall flexibility. Better flexibility reduces the risk of injuries and enhances posture, preventing back and neck pain caused by prolonged sitting or poor alignment.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card lc2">
-                <img class="card-img-top" src="https://media.istockphoto.com/id/1586678411/nl/vector/print.jpg?s=612x612&w=0&k=20&c=xwxVftpH12watA19TxQB9ZAOsfoIBft1aDO79WcYFdM=">
-                <div class="card-body">
-                  <p class="card-text lexend-font"><span class="about-span">Reduces Stress and Anxiety:</span><br><br>Yoga incorporates deep breathing and meditation, which activate the body's relaxation response. This helps lower stress hormones, calm the mind, and promote mental well-being, making it an effective tool for managing anxiety and daily stress.</p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="right-card">
-            <div class="card rc1">
-                <img class="card-img-top" src="https://images.pexels.com/photos/355863/pexels-photo-355863.jpeg?auto=compress&cs=tinysrgb&w=600">
-                <div class="card-body">
-                  <p class="card-text lexend-font lexend-font"><span class="about-span">Boosts Strength and Balance:</span><br><br>Many yoga poses require the engagement of core and stabilizing muscles, improving strength and balance. Over time, this enhances physical endurance and coordination, benefiting athletes and individuals of all fitness levels.</p>
-                </div>
-            </div>
-
-            <div class="card rc2">
-                <div>
-                    <img class="card-img-top" src="https://images.pexels.com/photos/8173429/pexels-photo-8173429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text lexend-font"><span class="about-span">Enhances Overall Health:</span><br><br>Yoga has been linked to improved heart health, better digestion, and enhanced immune function. It promotes mindful living, encourages healthier habits, and can help regulate blood pressure and blood sugar levels.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="div-below-cards" style="position: relative; z-index: 100;">
-        <p class="para-under-cards-sec" style="letter-spacing: 2vw;">INNER PEACE</p>
-    </div>
-
-
-    <div class="card-container position-relative">
-        <div class="card-wrapper d-flex flex-row" id="cardWrapper">
-            <div class="card1 p-3" style="padding-bottom: 0px !important;">
-                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
-                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
-                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
-                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
-                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
-                </div>
-            </div>
-            <div class="card1 p-3">
-                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
-                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
-                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
-                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
-                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
-                </div>
-            </div>
-            <div class="card1 p-3">
-                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
-                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
-                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
-                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
-                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
-                </div>
-            </div>
-            <div class="card1 p-3">
-                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
-                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
-                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
-                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
-                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
-                </div>
-            </div>
-            <div class="card1 p-3">
-                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
-                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
-                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
-                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
-                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
-                </div>
-            </div>
-            <div class="card1 p-3">
-                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
-                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
-                        <img src="slider-pic1.jpeg" class="rounded-circle img-fluid">
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <h5 class="fw-semibold text-secondary">Raj Kumar</h5>
-                    <p class="text-muted small mt-2">The teaching was very good and very much useful. Excellent work.</p>
-                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
-                </div>
-            </div>
-        </div>
-        <div class="arrow-container">
-            <button class="btn btn-secondary" onclick="scrollCards(-1)"><i class="bi bi-arrow-left"></i></button>
-            <button class="btn btn-secondary" onclick="scrollCards(1)"><i class="bi bi-arrow-right"></i></button>
-        </div>
-    </div>
-
-
-    <!-- footer section -->
-     <footer class="bg-dark py-5" style="z-index: 100; position: relative;">
-        <div class="d-flex flex-column">
-            <div class="p-2 d-flex justify-content-center" style="margin-right: 5vw; margin-left: 5vw; color: rgba(211, 211, 211, 0.63);">
-                <div class="d-flex">
-                    <div class="p-2 footer-nav">Home</div>
-                    <div class="p-2 footer-nav">Pricing</div>
-                    <div class="p-2 footer-nav">Contact</div>
-                    <div class="p-2 footer-nav">Features</div>
-                  </div>
-            </div>
-
-
-            <div class="p-2">
-                <div style="width: 90%; height: 1px; background-color: #fafafa73; margin: auto;"></div>
-            </div>
-
-
-            <div class="p-2" style="color: rgba(211, 211, 211, 0.63); margin-right: 5vw; margin-left: 5vw;">
-                <div class="d-flex bd-highlight mb-3">
-                    <div class="mr-auto p-2 bd-highlight footer-nav" style="color: white;">KAL's YOGA</div>
-                    <a href="https://api.whatsapp.com/send/?phone=9884177941&text&type=phone_number&app_absent=0">
-                    <div class="p-2 bd-highlight footer-nav">
-                        <img src="whatsapp-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
-                    </div></a>
-                    <a href="https://www.instagram.com/kalpanakathirvelu/#">
-                    <div class="p-2 bd-highlight footer-nav">
-                        <img src="instagram-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
-                    </div>
-                    </a>
-                    <a href="https://www.facebook.com/share/19CoFxqLmc/">
-                    <div class="p-2 bd-highlight footer-nav">
-                        <img src="facebook-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">  
-                    </div>
-                    </a>
-                  </div>    
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            function handleScroll() {
-                let triggerHeight = window.innerHeight * 0.8; // 30% of viewport height
-
-                let cards = document.querySelectorAll('.lc1, .lc2, .rc1, .rc2');
-
-                cards.forEach(card => {
-                    let cardPos = card.getBoundingClientRect().top;
-
-                    if (cardPos < triggerHeight) {
-                        card.classList.add('show');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', handleScroll);
-            handleScroll(); // Run once to check if elements are already in view on load
-        });
-
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-            function handleScroll() {
-                let triggerHeight = window.innerHeight * 0.9; // 30% of viewport height
-                let imagesec = document.querySelector(".image-sec");
-
-                if (imagesec) {
-                    let imagesecpos = imagesec.getBoundingClientRect().top;
-
-                    if (imagesecpos < triggerHeight) {
-                        imagesec.classList.add("visible");
-                    }
-                }
-            }
-
-            window.addEventListener("scroll", handleScroll);
-            handleScroll(); // Run on page load in case it's already in view
-        });
-        document.querySelectorAll('.dropdown-toggle').forEach(function (dropdown) {
-    dropdown.addEventListener('click', function (event) {
-        event.stopPropagation(); // Prevents event from bubbling to `document`
-
-        let menu = this.nextElementSibling; // Get the dropdown menu
-
-        // Toggle only the clicked dropdown
-        if (menu.classList.contains('show')) {
-            menu.classList.remove('show'); // Close if open
-        } else {
-            document.querySelectorAll('.dropdown-menu').forEach(function (el) {
-                el.classList.remove('show'); // Close all other dropdowns
-            });
-            menu.classList.add('show'); // Open the clicked dropdown
-        }
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed('.typing', {
+      strings: ["web developer.", "UI/UX designer.", "problem solver."],
+      typeSpeed: 50,
+      backSpeed: 30,
+      showCursor: true, 
+      loop: true
     });
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', function () {
-    document.querySelectorAll('.dropdown-menu').forEach(function (el) {
-        el.classList.remove('show');
-    });
-});
-
-
-
-    </script>
-    <script>
-        function scrollCards(direction) {
-            const container = document.getElementById("cardWrapper");
-            container.scrollBy({ left: direction * 220, behavior: "smooth" });
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+  </script>
 </body>
 </html>
