@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        .lexend-font {
+            font-family: "Lexend", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        .navbar-custom {
+            background: linear-gradient(to right, #232526, #414345);
+        }
+        .navbar-custom .navbar-brand, 
+        .navbar-custom .nav-link {
+            color: #f8f9fa !important;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #ffcc00 !important;
+        }
+        .dropdown-menu {
+            background-color: #343a40;
+        }
+        .dropdown-menu .dropdown-item {
+            color: #ffffff !important;
+        }
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #495057 !important;
+        }
+        
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+        .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.85)" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+        }
+
+        .form-control, .form-select {
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #review {
+            height: 100px;
+            resize: none;
+        }
+        .hidden {
+            display: none;
+        }
+        @media (max-width: 700px) {
+            .image-logo{
+                width: 10vw !important;
+            } 
+        }
+    </style>
+</head>
+<body class="bg-light justify-content-center align-items-center vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <img src="yoga_logo.png" class="img-fluid image-logo" alt="..." style="width: 4vw;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pricing.html">Pricing</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                        Contact
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="https://api.whatsapp.com/send/?phone=9884177941&text&type=phone_number&app_absent=0">WhatsApp</a>
+                        <a class="dropdown-item" href="https://www.instagram.com/kalpanakathirvelu/#">Instagram</a>
+                        <a class="dropdown-item" href="https://www.facebook.com/share/19CoFxqLmc/">Facebook</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" style="color: #f8f9fa; opacity: 0.5;">
+                <li class="nav-item">
+                    <a class="nav-link" href="creator.html">Creator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <div class="container lexend-font" style="margin-top: 10vh; margin-bottom: 10vh;">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm p-4" id="form-container">
+                    <h3 class="text-center mb-4">Submit Your Review</h3>
+                    <form id="review-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Mail:</label>
+                            <input type="email" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="review" class="form-label">Review:</label>
+                            <textarea class="form-control" id="review" name="review" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rating" class="form-label">Rating:</label>
+                            <select class="form-select form-control" id="rating" name="rating" required>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Average</option>
+                                <option value="1">Poor</option>
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card shadow-sm p-4 text-center hidden" id="success-message">
+                    <h3 style="color: #007bff;">Your review has been submitted!</h3>
+                    <h4>Thank you</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer section -->
+    <footer class="bg-dark py-5" style="z-index: 100; position: relative;">
+        <div class="d-flex flex-column">
+            <div class="p-2 d-flex justify-content-center" style="margin-right: 5vw; margin-left: 5vw; color: rgba(211, 211, 211, 0.63);">
+                <div class="d-flex">
+                    <div class="p-2 footer-nav">Home</div>
+                    <div class="p-2 footer-nav">Pricing</div>
+                    <div class="p-2 footer-nav">Contact</div>
+                    <div class="p-2 footer-nav">Features</div>
+                  </div>
+            </div>
+
+
+            <div class="p-2">
+                <div style="width: 90%; height: 1px; background-color: #fafafa73; margin: auto;"></div>
+            </div>
+
+
+            <div class="p-2" style="color: rgba(211, 211, 211, 0.63); margin-right: 5vw; margin-left: 5vw;">
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="mr-auto p-2 bd-highlight footer-nav" style="color: white;">KAL's YOGA</div>
+                    <a href="https://api.whatsapp.com/send/?phone=9884177941&text&type=phone_number&app_absent=0">
+                    <div class="p-2 bd-highlight footer-nav">
+                        <img src="whatsapp-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
+                    </div></a>
+                    <a href="https://www.instagram.com/kalpanakathirvelu/#">
+                    <div class="p-2 bd-highlight footer-nav">
+                        <img src="instagram-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
+                    </div>
+                    </a>
+                    <a href="https://www.facebook.com/share/19CoFxqLmc/">
+                    <div class="p-2 bd-highlight footer-nav">
+                        <img src="facebook-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">  
+                    </div>
+                    </a>
+                  </div>    
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("review-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("form-container").classList.add("hidden");
+            document.getElementById("success-message").classList.remove("hidden");
+        });
+    </script>
+</body>
+</html>
