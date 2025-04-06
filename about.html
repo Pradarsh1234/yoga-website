@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .lexend-font {
+            font-family: "Lexend", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        .first-div{
+            display: flex; 
+            background-color: #007bffe1; 
+            justify-content: center; 
+            align-items: center; 
+            margin-top: 15%;
+            font-size: 17px;
+        }
+        .img-container{
+            background-color: white; 
+            width: 500px; 
+            height: 500px; 
+            border-radius: 50%; 
+            display:flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-top: -70%;
+        }
+        @media (max-width: 1050px){
+            .first-div{
+                flex-direction: column;
+                position: relative;
+                padding-bottom: 25%;
+            }
+            .img-container{
+                margin-top: auto;
+                position: absolute;
+                left:0;
+            }
+            h1{
+                padding: 5%;
+            }
+        }
+        @media (max-width: 750px){
+            .img-container{
+                width: 400px;
+                height: 400px;
+            }
+            .img1{
+                width: 360px !important;
+                height: 360px !important;
+            }
+        }
+        @media (max-width: 480px){
+            .first-div{
+                font-size: 14px;
+            }
+            .img-container{
+                width: 250px;
+                height: 250px;
+            }
+            .img1{
+                width: 210px !important;
+                height: 210px !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div style="display: flex;justify-content: center; align-items: center; padding-top: 10%;">
+        <h1 class="lexend-font" style="font-size: 50px;">My journey is what gave me power!</h1>
+    </div>
+    <div class="lexend-font first-div">
+        <div style="color: white; padding: 10% 5% 5% 10%;">
+            <p>Yoga has been a transformative part of my life, offering both physical and mental benefits that have helped me grow in ways I never expected. I started practicing yoga several years ago, initially as a way to relieve stress and improve my flexibility. Over time, I came to appreciate its deeper aspects, such as mindfulness, meditation, and self-awareness.
+            My practice has evolved with me. Whether it's the calming effect of restorative poses after a long day or the challenge of an intense flow sequence, yoga has taught me the importance of balance, patience, and persistence. I've studied various styles, from Hatha and Vinyasa to Yin, and have learned something valuable from each.</p>
+        </div>
+        <div style=" margin-right: 5%;">
+            <!-- Outer Circle -->
+            <div class="img-container">
+            <!-- Inner Circle (Image) -->
+                <img class="img1" src="slider-pic1.jpeg" style="
+                    width: 460px; /* 500 - (2 x 30px padding) */
+                    height: 460px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                ">
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
