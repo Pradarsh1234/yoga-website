@@ -63,6 +63,16 @@
             justify-content: center; 
             margin-top: -70%;
         }
+        .second-div{
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            margin-left: 20vw; 
+            margin-right: 20vw; 
+            padding-top: 10%; 
+            padding-bottom: 10%;
+        }
         @media (max-width: 1050px){
             .first-div{
                 flex-direction: column;
@@ -77,6 +87,9 @@
             h1{
                 padding: 5%;
             }
+            .second-div{
+                padding-top: 310px;
+            }
         }
         @media (max-width: 750px){
             .img-container{
@@ -87,9 +100,7 @@
                 width: 360px !important;
                 height: 360px !important;
             }
-            footer{
-                margin-top: 30%;
-            }
+            
         }
         @media (max-width: 480px){
             .image-logo{
@@ -110,8 +121,8 @@
                 padding-bottom: 10% !important;
                 font-size: 40px !important;
             }
-            footer{
-                margin-top: 50%;
+            .second-div{
+                padding-top: 150px;
             }
         }
 
@@ -126,7 +137,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
@@ -175,9 +186,18 @@
                     object-fit: cover;
                 ">
             </div>
-
         </div>
     </div>
+
+
+    <!-- second div -->
+    <div class="second-div">
+        <h2 style="padding-bottom: 50px;">My Yoga Journey and IYA Certification</h2>
+        <p>My yoga practice has been deeply shaped by the teachings of Andiappan Yoga and the guidance I received through the IYA International Yoga Academy. I am proud to hold an official IYA Certification in Yoga, a recognition that has not only deepened my practice but also refined my understanding of yoga’s transformative power.<br><br>The IYA International Yoga Academy is known for its comprehensive, high-quality training programs, and receiving my certification from them was a pivotal moment in my journey. The curriculum provided a holistic approach to yoga, combining physical postures, breath control, and meditation techniques with a deeper understanding of yoga philosophy and its therapeutic benefits.</p>
+    </div>
+
+
+
     <!-- footer section -->
     <footer class="bg-dark py-5" style="z-index: 100; position: relative;">
         <div class="d-flex flex-column">
