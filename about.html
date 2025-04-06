@@ -45,7 +45,7 @@
         }
 
 
-        .first-div{
+        .first-div ,.third-div{
             display: flex; 
             background-color: #007bffe1; 
             justify-content: center; 
@@ -63,16 +63,23 @@
             justify-content: center; 
             margin-top: -70%;
         }
+        .img-container2{
+            background-color: white; 
+            width: 500px; 
+            height: 500px; 
+            border-radius: 50%; 
+            display:flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-top: -70%;
+        }
         .second-div{
             display: flex; 
             text-align: center;
             flex-direction: column; 
             justify-content: center; 
-            align-items: center; 
-            margin-left: 20vw; 
-            margin-right: 20vw; 
+            align-items: center;  
             padding-top: 10%; 
-            padding-bottom: 10%;
         }
         @media (max-width: 1050px){
             .first-div{
@@ -80,16 +87,29 @@
                 position: relative;
                 padding-bottom: 25%;
             }
+            .third-div{
+                flex-direction: column;
+                position: relative;
+                padding-top:200px ;
+            }
             .img-container{
                 margin-top: auto;
                 position: absolute;
                 left:0;
+            }
+            .img-container2{
+                margin-top: auto !important;
+                margin-left: 0px;
+                position: absolute;
+                right: 0 !important;
+                top: -250px;
             }
             h1{
                 padding: 5%;
             }
             .second-div{
                 padding-top: 310px;
+                padding-bottom: 110px;
             }
         }
         @media (max-width: 750px){
@@ -97,9 +117,16 @@
                 width: 400px;
                 height: 400px;
             }
+            .img-container2{
+                width: 400px;
+                height: 400px;
+            }
             .img1{
                 width: 360px !important;
                 height: 360px !important;
+            }
+            .second-div{
+                padding-bottom: 32%;
             }
             
         }
@@ -118,6 +145,11 @@
                 width: 290px;
                 height: 290px;
             }
+            .img-container2{
+                width: 290px;
+                height: 290px;
+                top: -150px;
+            }
             .img1{
                 width: 270px !important;
                 height: 270px !important;
@@ -127,6 +159,7 @@
                 font-size: 40px !important;
             }
             .second-div{
+                position: relative;
                 padding-top: 230px;
                 margin-left: 10vw; 
                 margin-right: 10vw;
@@ -198,12 +231,36 @@
 
 
     <!-- second div -->
-    <div class="second-div lexend-font">
-        <h2 style="padding-bottom: 50px;">My Yoga Journey and IYA Certification</h2>
-        <p>My yoga practice has been deeply shaped by the teachings of Andiappan Yoga and the guidance I received through the IYA International Yoga Academy. I am proud to hold an official IYA Certification in Yoga, a recognition that has not only deepened my practice but also refined my understanding of yoga’s transformative power.<br><br>The IYA International Yoga Academy is known for its comprehensive, high-quality training programs, and receiving my certification from them was a pivotal moment in my journey. The curriculum provided a holistic approach to yoga, combining physical postures, breath control, and meditation techniques with a deeper understanding of yoga philosophy and its therapeutic benefits.</p>
+    <div class="second-div lexend-font" style="position: relative;">
+        <div style="margin-left: 20vw; 
+            margin-right: 20vw;"><h2 style="padding-bottom: 50px;">My Yoga Journey and IYA Certification</h2>
+            <p style="color: #343a40a9;">My yoga practice has been deeply shaped by the teachings of Andiappan Yoga and the guidance I received through the IYA International Yoga Academy. I am proud to hold an official IYA Certification in Yoga, a recognition that has not only deepened my practice but also refined my understanding of yoga’s transformative power.<br><br>The IYA International Yoga Academy is known for its comprehensive, high-quality training programs, and receiving my certification from them was a pivotal moment in my journey. The curriculum provided a holistic approach to yoga, combining physical postures, breath control, and meditation techniques with a deeper understanding of yoga philosophy and its therapeutic benefits.</p>
+        </div>
     </div>
 
 
+<!-- third div -->
+    <div class="lexend-font third-div"> 
+        <div>
+            <div class="img-container2" style="margin-top: -70%; margin-left: 7%;">
+                <img class="img1" src="slider-pic1.jpeg" style="
+                    width: 460px; /* 500 - (2 x 30px padding) */
+                    height: 460px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                ">
+            </div>
+        </div>
+        <div style="color: white; padding: 7% 5% 5% 10%;">
+            <h2 style="font-size: 50px; padding-bottom: 7%;">How yoga <br>affected me.</h2>
+            <p>Yoga has been a transformative part of my life, offering both physical and mental benefits that have helped me grow in ways I never expected. I started practicing yoga several years ago, initially as a way to relieve stress and improve my flexibility. Over time, I came to appreciate its deeper aspects, such as mindfulness, meditation, and self-awareness.
+            My practice has evolved with me. Whether it's the calming effect of restorative poses after a long day or the challenge of an intense flow sequence, yoga has taught me the importance of balance, patience, and persistence. I've studied various styles, from Hatha and Vinyasa to Yin, and have learned something valuable from each.</p>
+        </div>
+        </div>
+    </div>
+
+
+    
 
     <!-- footer section -->
     <footer class="bg-dark py-5" style="z-index: 100; position: relative;">
