@@ -161,6 +161,22 @@
                 width: 10vw !important;
             }
         }
+        @keyframes fadein{
+            from{
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in{
+            opacity: 0;
+            animation: fadein 1.5s ease-in-out forwards;
+        }
+        .fade-in-1{ animation-delay: 0.3s;}
+        .fade-in-2{ animation-delay: 0.6s;}
     </style>
 </head>
 <body>
@@ -202,7 +218,7 @@
 
 
 
-    <div class="d-flex flex-column align-items-center mt-5" style="padding-bottom: 5vw;">
+    <div class="d-flex flex-column align-items-center mt-5 fade-in fade-in-2" style="padding-bottom: 5vw;">
         <div class="d-flex flex-row top-plan w-80 justify-content-between" style="gap: 10px;width: 80%">
             <div class="flex-grow-1 lexend-font p-3 my-css">Your plan, your call.</div>
             <div class="flex-shrink-1 p-3 ms-auto">
@@ -216,7 +232,7 @@
                   </div>
             </div>
         </div>
-        <div id="adult" class="section" style="display: flex; justify-content: center; justify-content:space-around; align-items: center;">
+        <div id="adult" class="section fade-in fade-in-2" style="display: flex; justify-content: center; justify-content:space-around; align-items: center;">
             <div class="box lexend-font">
                 <div class="box-inner">
                     <div>
