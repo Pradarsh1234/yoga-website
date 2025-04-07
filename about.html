@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>KAL's YOGA</title>
+    <link rel="icon" type="image/png" href="yoga_logo.png">
     <style>
         body{
             margin: 0;
@@ -73,6 +74,16 @@
             justify-content: center; 
             margin-top: -90%;
         }
+        .img-container3{
+            background-color: white; 
+            width: 500px; 
+            height: 500px; 
+            border-radius: 50%; 
+            display:flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-top: -90%;
+        }
         .second-div{
             display: flex; 
             text-align: center;
@@ -104,6 +115,11 @@
                 right: 0 !important;
                 top: -250px;
             }
+            .img-container3{
+                margin-top: auto;
+                left:0;
+                bottom: -350px !important;
+            }
             h1{
                 padding: 5%;
             }
@@ -113,6 +129,16 @@
             }
         }
         @media (max-width: 750px){
+            .image-logo{
+                width: 10vw !important;
+            }
+            .header{
+                padding-top: 30% !important;
+                padding-bottom: 25% !important;
+            }
+            .third-div{
+                padding-bottom: 25% !important;
+            }
             .img-container{
                 width: 400px;
                 height: 400px;
@@ -120,6 +146,11 @@
             .img-container2{
                 width: 400px;
                 height: 400px;
+            }
+            .img-container3{
+                width: 400px;
+                height: 400px;
+                bottom: -280px !important;
             }
             .img1{
                 width: 360px !important;
@@ -141,6 +172,9 @@
             .first-div{
                 font-size: 14px;
             }
+            .third-div{
+                padding-bottom: 25% !important;
+            }
             .img-container{
                 width: 290px;
                 height: 290px;
@@ -149,6 +183,11 @@
                 width: 290px;
                 height: 290px;
                 top: -150px;
+            }
+            .img-container3{
+                width: 290px;
+                height: 290px;
+                bottom: -200px !important;
             }
             .img1{
                 width: 270px !important;
@@ -258,7 +297,7 @@
 
 
 <!-- third div -->
-    <div class="lexend-font third-div"> 
+    <div class="lexend-font third-div" style="position: relative;padding-bottom: 15%;"> 
         <div>
             <div class="img-container2" style="margin-top: -70%; margin-left: 7%;">
                 <img class="img1" src="slider-pic2.jpeg" style="
@@ -275,8 +314,19 @@
             <p>Yoga has been a transformative part of my life, offering both physical and mental benefits that have helped me grow in ways I never expected. I started practicing yoga several years ago, initially as a way to relieve stress and improve my flexibility. Over time, I came to appreciate its deeper aspects, such as mindfulness, meditation, and self-awareness.
             My practice has evolved with me. Whether it's the calming effect of restorative poses after a long day or the challenge of an intense flow sequence, yoga has taught me the importance of balance, patience, and persistence. I've studied various styles, from Hatha and Vinyasa to Yin, and have learned something valuable from each.</p>
         </div>
+        <div class="img-container3" style="position: absolute; right: 0; bottom: -300px;">
+            <img class="img1" src="slider-pic3.jpeg" style="
+                width: 460px; /* 500 - (2 x 30px padding) */
+                height: 460px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center top;
+            ">
         </div>
     </div>
+    
+
+    <div style="height: 500px;"></div>
 
 
     
