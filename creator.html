@@ -61,6 +61,17 @@
       overflow: hidden;
       display: inline; /* Ensures cursor stays on the same line */
     }
+
+    .footer-nav {
+        color: rgba(211, 211, 211, 0.63);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        }
+
+    .footer-nav:hover {
+        color: white;
+    }
+
  /* From Uiverse.io by alshahwan */ 
 .wa-button {
   background-color: #fff;
@@ -208,7 +219,7 @@
         </ul>
         <ul class="navbar-nav ml-auto" style="color: #f8f9fa; opacity: 0.5;">
             <li class="nav-item">
-                <a class="nav-link" href="creator.html">Creator</a>
+                <a class="nav-link" href="creator.html">Developer</a>
             </li>
         </ul>
     </div>
@@ -245,15 +256,25 @@
   <!-- footer section -->
   <footer class="py-5" style="z-index: 100; position: relative; background-color: #37393a">
     <div class="d-flex flex-column">
-        <div class="p-2 d-flex justify-content-center" style="margin-right: 5vw; margin-left: 5vw; color: rgba(211, 211, 211, 0.63);">
-            <div class="d-flex">
-                <div class="p-2 footer-nav">Home</div>
-                <div class="p-2 footer-nav">Pricing</div>
-                <div class="p-2 footer-nav">Contact</div>
-                <div class="p-2 footer-nav">Features</div>
-              </div>
-        </div>
-
+        <div class="d-flex justify-content-center" style="gap: 2rem; color: rgba(211, 211, 211, 0.63);">
+            <!-- Column 1 -->
+            <div class="d-flex flex-column align-items-center" style="gap: 0.5rem;">
+              <a href="#home" class="footer-nav text-decoration-none">Home</a>
+              <a href="#about" class="footer-nav text-decoration-none" style="padding-bottom: 1rem;">About</a>
+            </div>
+          
+            <!-- Column 2 -->
+            <div class="d-flex flex-column align-items-center" style="gap: 0.5rem;">
+              <a href="#pricing" class="footer-nav text-decoration-none">Pricing</a>
+              <a href="#queries" class="footer-nav text-decoration-none">Queries</a>
+            </div>
+          
+            <!-- Column 3 -->
+            <div class="d-flex flex-column align-items-center" style="gap: 0.5rem;">
+              <a href="#developer" class="footer-nav text-decoration-none">Developer</a>
+              <a href="#reviews" class="footer-nav text-decoration-none">Reviews</a>
+            </div>
+          </div>
 
         <div class="p-2">
             <div style="width: 90%; height: 1px; background-color: #fafafa73; margin: auto;"></div>
@@ -277,6 +298,16 @@
                     <img src="facebook-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">  
                 </div>
                 </a>
+              </div>    
+        </div>
+
+
+        <div style="color: rgba(211, 211, 211, 0.63); margin-right: 5vw; margin-left: 5vw;">
+            <div class="d-flex">
+                <div class="mr-auto" style="color: white;">KAL's YOGA</div>
+                <div>
+                    <p>Designer & Developer -- <a href="creator.html" style="text-decoration: none; color: white;"><span style="color: white;">Pradarsh S</span><a></a></p>
+                </div>
               </div>    
         </div>
     </div>
