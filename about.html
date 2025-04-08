@@ -92,6 +92,15 @@
             align-items: center;  
             padding-top: 10%; 
         }
+        .footer-nav {
+            color: rgba(211, 211, 211, 0.63);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav:hover {
+            color: white;
+        }
 
         .carousel {
     height: 400px;
@@ -237,6 +246,15 @@
                 margin-bottom: 300px !important;
                 margin-top: 320px !important;
             }
+            .footer-nav{
+                font-size: smaller;
+            }
+            .img-icon{
+                padding: 3px !important;
+            }
+            .break{
+                display: block !important;
+            }
         }
         @keyframes fadeIn {
             from {
@@ -368,7 +386,7 @@
                 <img class="d-block w-100" src="slider-pic1.jpeg" style="height: 400px; object-fit: cover;" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="slider-pic1.jpeg" style="height: 400px; object-fit: cover;" alt="First slide">
+                <img class="d-block w-100" src="slider-pic2.jpeg" style="height: 400px; object-fit: cover;" alt="First slide">
 
               </div>
               <div class="carousel-item">
@@ -392,44 +410,72 @@
     
 
     <!-- footer section -->
-    <footer class="py-5" style="z-index: 100; position: relative; background-color: #37393a;">
+    <footer class="py-5" style="z-index: 100; position: relative; background-color: #37393a">
         <div class="d-flex flex-column">
-            <div class="p-2 d-flex justify-content-center" style="margin-right: 5vw; margin-left: 5vw; color: rgba(211, 211, 211, 0.63);">
-                <div class="d-flex">
-                    <div class="p-2 footer-nav">Home</div>
-                    <div class="p-2 footer-nav">Pricing</div>
-                    <div class="p-2 footer-nav">Contact</div>
-                    <div class="p-2 footer-nav">Features</div>
-                  </div>
-            </div>
-
-
+            <div class="d-flex justify-content-center" style="gap: 2rem; color: rgba(211, 211, 211, 0.63);">
+                <!-- Column 1 -->
+                <div class="d-flex flex-column align-items-center" style="gap: 0.5rem;">
+                  <a href="index.html" class="footer-nav text-decoration-none">Home</a>
+                  <a href="about.html" class="footer-nav text-decoration-none" style="padding-bottom: 1rem;">About</a>
+                </div>
+              
+                <!-- Column 2 -->
+                <div class="d-flex flex-column align-items-center" style="gap: 0.5rem;">
+                  <a href="pricing.html" class="footer-nav text-decoration-none">Pricing</a>
+                  <a href="https://forms.gle/FXGLtMfcezaM2LAY8" class="footer-nav text-decoration-none">Help Center</a>
+                </div>
+              
+                <!-- Column 3 -->
+                <div class="d-flex flex-column align-items-center" style="gap: 0.5rem;">
+                  <a href="creator.html" class="footer-nav text-decoration-none">Developer</a>
+                  <a href="review.html" class="footer-nav text-decoration-none">Reviews</a>
+                </div>
+              </div>
+    
             <div class="p-2">
                 <div style="width: 90%; height: 1px; background-color: #fafafa73; margin: auto;"></div>
             </div>
-
-
+    
+    
             <div class="p-2" style="color: rgba(211, 211, 211, 0.63); margin-right: 5vw; margin-left: 5vw;">
-                <div class="d-flex bd-highlight mb-3">
-                    <div class="mr-auto p-2 bd-highlight footer-nav" style="color: white;">KAL's YOGA</div>
+                <div class="d-flex bd-highlight mb-3 footer-nav icon-div">
+                    <div class="mr-auto p-2 bd-highlight footer-nav" style="color: white;">
+                        <p style="color: rgba(211, 211, 211, 0.63);">
+                            &copy; 2025 Kalpu Vriksha Yoga.<br class="break" style="display: none;"> All rights reserved.
+                        </p>                      
+                    </div>
                     <a href="https://api.whatsapp.com/send/?phone=9884177941&text&type=phone_number&app_absent=0">
-                    <div class="p-2 bd-highlight footer-nav">
+                    <div class="p-2 bd-highlight footer-nav img-icon">
                         <img src="whatsapp-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
                     </div></a>
                     <a href="https://www.instagram.com/kalpanakathirvelu/#">
-                    <div class="p-2 bd-highlight footer-nav">
+                    <div class="p-2 bd-highlight footer-nav img-icon">
                         <img src="instagram-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
                     </div>
                     </a>
                     <a href="https://www.facebook.com/share/19CoFxqLmc/">
-                    <div class="p-2 bd-highlight footer-nav">
+                    <div class="p-2 bd-highlight footer-nav img-icon">
                         <img src="facebook-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">  
                     </div>
                     </a>
                   </div>    
             </div>
+    
+    
+            <div class="p-2" style="color: rgba(211, 211, 211, 0.63); margin-right: 5vw; margin-left: 5vw;">
+                <div class="d-flex footer-nav">
+                    <div class="mr-auto p-2 bd-highlight footer-nav" style="color: white;">
+                        <span style="color: rgba(211, 211, 211, 0.63);">Get in touch<br>
+                        </span> <a href="mailto:kalpanakathir31@gmail.com" style="text-decoration: none; color: white;">kalpanakathir31@gmail.com</a>
+    
+                    </div>
+                    <div>
+                        <p class="footer-nav"><span class="designer-dis">Designer & </span>Developer -- <a href="creator.html" style="text-decoration: none; color: white;"><span style="color: white;">Pradarsh S</span><a></a></p>
+                    </div>
+                  </div>    
+            </div>
         </div>
-    </footer>
+      </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
