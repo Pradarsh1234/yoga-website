@@ -132,7 +132,11 @@
   }
 }
 
-
+    @media (max-width: 700px){
+        .designer-dis{
+            display: none;
+        }
+    }
     @media (max-width: 480px) {
       .inner-sec {
         background-color: transparent;
@@ -140,7 +144,7 @@
         box-shadow: none;
       }
       .footer-nav{
-                font-size: smaller;
+            font-size: smaller;
         }
         .image-logo{
             width: 10vw !important;
@@ -302,11 +306,12 @@
         </div>
 
 
-        <div style="color: rgba(211, 211, 211, 0.63); margin-right: 5vw; margin-left: 5vw;">
+        <div class="p-2" style="color: rgba(211, 211, 211, 0.63); margin-right: 5vw; margin-left: 5vw;">
             <div class="d-flex">
-                <div class="mr-auto" style="color: white;">KAL's YOGA</div>
+                <div class="mr-auto p-2 bd-highlight footer-nav" style="color: white;"><span style="color: rgba(211, 211, 211, 0.63);">Get in touch<br>
+                </span> kalpanakathir31@gmail.com</div>
                 <div>
-                    <p>Designer & Developer -- <a href="creator.html" style="text-decoration: none; color: white;"><span style="color: white;">Pradarsh S</span><a></a></p>
+                    <p><span class="designer-dis">Designer & </span>Developer -- <a href="creator.html" style="text-decoration: none; color: white;"><span style="color: white;">Pradarsh S</span><a></a></p>
                 </div>
               </div>    
         </div>
