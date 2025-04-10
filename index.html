@@ -624,7 +624,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const heroHeight = heroContainer.offsetHeight;
         if (scrollPosition > heroOffset - window.innerHeight && 
             scrollPosition < heroOffset + heroHeight) {
-            const offset = (scrollPosition - heroOffset) * 0.9;
+            const offset = (scrollPosition - heroOffset) * 0.7;
             heroParallaxBg.style.transform = `translate3d(0, ${offset}px, 0)`;
         }
         
