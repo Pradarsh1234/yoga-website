@@ -456,68 +456,12 @@
     </div>
     
 
-    <!-- Hero Section -->
-    <div class="image-container" style="
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    overflow: hidden;
-    z-index: 100;
-">
-    <!-- Parallax Background (replacing ::before) -->
-    <div class="parallax-bg" id="hero-parallax-bg" style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('bg-home.webp');
-        background-size: cover;
-        background-position: center;
-        filter: blur(6px);
-        z-index: -1;
-        transform: translate3d(0,0,0);
-        will-change: transform;
-    "></div>
-    
-    <!-- Content -->
-    <h1 class="fade-in fade-in-1">KALPANA</h1>
-    <div class="fade-in fade-in-2" style="width: 50%; height: 2px; background-color: #FAFAFA;"></div>
-    <p class="hero-sec-par fade-in fade-in-3" style="margin-bottom: 0px !important;">CONTINUOUSLY EVOLVING.</p>
-</div>
 
-
-
-
-    <!-- about section -->
-    <div class="about-div" style="display: flex; position: relative; align-items: center; overflow: hidden;">
-        <div class="about-inner" style="flex: 1; z-index: 2; padding: 0% 15% 2% 0%;">
-            <h1 class="benefits" style="text-shadow: 0px 0px 10px grey; color: #232526;">ABOUT ME</h1>
-            <div style="width: 20%; height: 2px; background-color: #232526; margin:auto"></div>
-            <p class="about-para lexend-font" style="color:#232526; font-size: larger; padding: 5% 10%; margin-bottom: 0px; text-shadow: 0px 0px 5px white;">
-                Hi! My name is Kalpana and I am currently a Yoga teacher. I created this website so I could share with you what I do and how that has made me who I am! <br><br>
-                My journey was filled with transformation, self-discovery, and inspiration. If you are just entering high school, I hope this website inspires you to create your own story, embrace your interests and passions, and empowers you to break barriers and influence change!
-            </p>
-            <a href="index.html" style="text-decoration: none;">
-                <div class="button-container">
-                    <button type="button" class="btn button-about">ABOUT</button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right arrow-icon" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                    </svg>
-                </div>
-            </a>
-            
-        </div>
-        <!-- Image Section -->
-        <div class="image-sec">
-            <img src="yoga-pose1.png" class="image" alt="Yoga Image">
-        </div>
+    <div class="header" style="display: flex;justify-content: center; align-items: center; padding-top: 10%; padding-bottom: 10%;">
+        <h1 class="lexend-font fade-in fade-in-1 .h1" style="font-size: 50px; padding-left: 10%; padding-right: 10%;">Transform Your Life: Enroll in Our Soulful Yoga Journey Today!</h1>
     </div>
+
+
 
     <!-- map-section -->
     <div class="map-section lexend-font">
@@ -578,67 +522,84 @@
     </div>
 
 
-    <div class="parallax-section" style="height: 70vh;position: relative; overflow: hidden; z-index: 100;">
-    <!-- Parallax Background -->
-    <div class="parallax-bg" id="inner-peace-parallax-bg" style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 200%; /* Extra height for movement */
-        background-image: url('background-below-cards.jpg');
-        background-size: cover;
-        background-position: center;
-        will-change: transform; /* Optimizes for animation */
-        transform: translate3d(0,0,0); /* Forces GPU acceleration */
-    "></div>
-    
-    <!-- Content -->
-    <p class="parallax-content" style="
-        position: relative;
-        color: #f8f9fa;
-        letter-spacing: 2vw;
-        text-align: center;
-        margin: 0;
-        padding: 30vh 0;
-        z-index: 2;
-    ">INNER PEACE</p>
-</div>
-
-<!-- Simple JavaScript for universal support -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // First parallax effect
-    const heroParallaxBg = document.getElementById('hero-parallax-bg');
-    const heroContainer = document.querySelector('.image-container');
-    
-    // Second parallax effect
-    const peaceParallaxBg = document.getElementById('inner-peace-parallax-bg');
-    const peaceContainer = document.querySelector('.parallax-section');
-    
-    window.addEventListener('scroll', function() {
-        const scrollPosition = window.pageYOffset;
+    <div class="parallax-section" style="height: 70vh; position: relative; overflow: hidden; z-index: 100;">
+        <!-- Parallax Background -->
+        <div class="parallax-bg" id="inner-peace-parallax-bg" style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background-image: url('background-below-cards.jpg');
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+            transform: translate3d(0,0,0);
+        "></div>
         
-        // Handle first parallax
-        const heroOffset = heroContainer.offsetTop;
-        const heroHeight = heroContainer.offsetHeight;
-        if (scrollPosition > heroOffset - window.innerHeight && 
-            scrollPosition < heroOffset + heroHeight) {
-            const offset = (scrollPosition - heroOffset) * 0.7;
-            heroParallaxBg.style.transform = `translate3d(0, ${offset}px, 0)`;
-        }
+        <!-- Content -->
+        <p class="parallax-content" style="
+            position: relative;
+            color: #f8f9fa;
+            letter-spacing: 2vw;
+            text-align: center;
+            margin: 0;
+            padding: 30vh 0;
+            z-index: 2;
+        ">INNER PEACE</p>
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Target ONLY this specific parallax section
+        const parallaxBg = document.getElementById('inner-peace-parallax-bg');
+        const parallaxSection = document.querySelector('.parallax-section');
         
-        // Handle second parallax
-        const peaceOffset = peaceContainer.offsetTop;
-        const peaceHeight = peaceContainer.offsetHeight;
-        if (scrollPosition > peaceOffset - window.innerHeight && 
-            scrollPosition < peaceOffset + peaceHeight) {
-            const offset = (scrollPosition - peaceOffset) * 0.7;
-            peaceParallaxBg.style.transform = `translate3d(0, ${offset}px, 0)`;
-        }
+        // Only proceed if our elements exist
+        if (!parallaxBg || !parallaxSection) return;
+        
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            const sectionOffset = parallaxSection.offsetTop;
+            const sectionHeight = parallaxSection.offsetHeight;
+            
+            // Only animate when in view
+            if (scrollPosition > sectionOffset - window.innerHeight && 
+                scrollPosition < sectionOffset + sectionHeight) {
+                
+                const offset = (scrollPosition - sectionOffset) * 0.7; // Adjust speed here
+                parallaxBg.style.transform = `translate3d(0, ${offset}px, 0)`;
+            }
+        });
     });
-});
-</script>
+    </script>
+
+
+
+    <!-- about section -->
+    <div class="about-div" style="display: flex; position: relative; align-items: center; overflow: hidden;">
+        <div class="about-inner" style="flex: 1; z-index: 2; padding: 0% 15% 2% 0%;">
+            <h1 class="benefits" style="text-shadow: 0px 0px 10px grey; color: #232526;">ABOUT ME</h1>
+            <div style="width: 20%; height: 2px; background-color: #232526; margin:auto"></div>
+            <p class="about-para lexend-font" style="color:#232526; font-size: larger; padding: 5% 10%; margin-bottom: 0px; text-shadow: 0px 0px 5px white;">
+                Hi! My name is Kalpana and I am currently a Yoga teacher. I created this website so I could share with you what I do and how that has made me who I am! <br><br>
+                My journey was filled with transformation, self-discovery, and inspiration. If you are just entering high school, I hope this website inspires you to create your own story, embrace your interests and passions, and empowers you to break barriers and influence change!
+            </p>
+            <a href="index.html" style="text-decoration: none;">
+                <div class="button-container">
+                    <button type="button" class="btn button-about">ABOUT</button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right arrow-icon" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                    </svg>
+                </div>
+            </a>
+            
+        </div>
+        <!-- Image Section -->
+        <div class="image-sec">
+            <img src="yoga-pose1.png" class="image" alt="Yoga Image">
+        </div>
+    </div>
 
 
     <div class="card-container position-relative">  
