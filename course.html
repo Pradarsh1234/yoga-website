@@ -5,35 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <title>Kalpu Vriksha</title>
     <link rel="icon" type="image/png" href="yoga_logo.png">
     <style>
-        body{
-            margin: 0;
+        html,body{
+            overflow-x: hidden;
+            width: 100%;
         }
         .lexend-font {
             font-family: "Lexend", sans-serif;
             font-optical-sizing: auto;
             font-style: normal;
-        }
-        .image-container h1 {
-            color: #FAFAFA;
-            font-family: "Oswald", sans-serif;
-            font-weight: bolder;
-            font-size: 10vw;
-            text-shadow: 0px 0px 5px grey;
-            margin: 0;
-        }
-        .hero-sec-par {
-            color: #FAFAFA;
-            font-family: "Oswald", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-            padding-top: 0.5%;
         }
         .navbar-custom {
             background: linear-gradient(to right, #232526, #414345);
@@ -62,52 +48,231 @@
             background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.85)" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
         }
 
-
-        .first-div ,.third-div{
-            display: flex; 
-            background-color: #007bffe1; 
-            justify-content: center; 
-            align-items: center; 
-            margin-top: 15%;
-            font-size: 17px;
+        
+        .image-container h1 {
+            color: #FAFAFA;
+            font-family: "Oswald", sans-serif;
+            font-weight: bolder;
+            font-size: 10vw;
+            text-shadow: 0px 0px 5px grey;
+            margin: 0;
         }
-        .img-container{
-            background-color: white; 
-            width: 500px; 
-            height: 500px; 
-            border-radius: 50%; 
-            display:flex; 
-            align-items: center; 
-            justify-content: center; 
-            margin-top: -90%;
-        }
-        .img-container2{
-            background-color: white; 
-            width: 500px; 
-            height: 500px; 
-            border-radius: 50%; 
-            display:flex; 
-            align-items: center; 
-            justify-content: center; 
-            margin-top: -90%;
-        }
-        .img-container3{
-            background-color: white; 
-            width: 500px; 
-            height: 500px; 
-            border-radius: 50%; 
-            display:flex; 
-            align-items: center; 
-            justify-content: center; 
-            margin-top: -90%;
-        }
-        .second-div{
-            display: flex; 
+        h1{
             text-align: center;
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center;  
-            padding-top: 10%; 
+            margin-top: 5%;
+        }
+        .hero-sec-par {
+            color: #FAFAFA;
+            font-family: "Oswald", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            padding-top: 0.5%;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center; /* Centers the cards horizontally */
+            align-items: center; /* Aligns cards vertically */
+            gap: 5vw; /* Adds a responsive space between cards */
+            flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+            max-width: 90vw; /* Prevents stretching too much */
+            margin: 5% auto; /* Centers the container */
+        }
+
+        .left-card, .right-card {
+            display: flex;
+            flex-direction: column;
+            gap: 3vw;
+        }
+
+        /* Initial states for each card */
+        .lc1, .lc2 {
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+
+        .rc1, .rc2 {
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+
+
+        .card {
+            width: 25rem;
+            border-width: 0px;
+            box-shadow: 0px 0px 20px #8888882f;
+            transition: all 0.7s ease-in-out;
+        }
+        
+        .card:hover {
+            box-shadow: 0px 0px 25px #8888888f;
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+        .show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+        .about-div{
+            color: #FAFAFA; 
+            background-color: rgb(249, 249, 249);
+            /* background: linear-gradient(226deg, rgb(252 255 214), rgb(255 0 0 / 0%) 70.71%), linear-gradient(127deg, rgba(196, 255, 118, 0.64), rgb(255 247 153 / 0%) 70.71%), linear-gradient(336deg, rgba(250, 233, 80, 0.49), rgb(0 0 255 / 0%) 70.71%);  */
+            padding-top: 1vw;
+        } 
+        .about-span{
+            font-weight: 900;
+        }
+        .button-about{
+            font-family:Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: grey;
+            border-radius: 20px; 
+            border: 0px;
+            box-shadow: 0px 0px 5px rgba(83, 83, 83, 0.877);
+            width: 100px;
+            transition: 500ms;
+        }
+        .button-about:hover{
+            color: grey;
+            background-color: white; 
+            box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.507);
+            width: 120px;
+        }
+        .button-container {
+            display: flex;
+            gap: 8px;
+            align-items: center; /* Align button and icon */
+            justify-content: center; /* Center them together */
+            width: 30%;
+            margin: auto;
+            margin-bottom: 10%;
+        }
+
+        .arrow-icon {
+            width: 16px !important;   /* Fixed width */
+            height: 16px !important;
+            flex-shrink: 0; 
+            color: rgb(27, 27, 27);
+            transition: 500ms;
+        }
+
+        .button-container:hover .arrow-icon {
+            color: grey;
+            transform: translateX(5px); /* Move the arrow slightly on hover */
+        }
+
+        .image-sec {
+            flex: 1;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateX(100%);
+            z-index: 1;
+            transition: transform 1s ease-in-out; /* Smooth transition */
+        }
+
+        .visible {
+            transform: translateX(0); /* Moves it into view */
+            transform: translateY(-60%);
+        }
+
+        .image{
+            margin-left: 0px; 
+            object-fit: cover; 
+            opacity: 0.9; 
+            padding: 10%;
+        }
+
+        .map-section{
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+            height: 80vh; 
+            width: 100%; 
+            background-color: #343a40;
+            position: relative; 
+            z-index: 100;
+        }
+        .map-button{
+            color: black;
+            background-color: white; 
+            text-decoration: none !important;
+            text-align: center;
+            border: 0px solid; 
+            width: 120px; 
+            border-radius: 50vw;
+            padding-top: 3px;
+            padding-bottom: 4px;
+            text-decoration: none;
+            align-items: center;
+            transition: 500ms;
+        }
+        .map-button:hover{
+            color: white;
+            background-color: black;
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        .card-container {
+            position: relative;
+            overflow: hidden;
+            width: 80%;
+            margin: 50px auto;
+            padding-bottom: 50px; /* Space for arrows */
+        }
+        .card-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            padding-top: 60px;
+            scrollbar-width: none; /* For Firefox */
+            -ms-overflow-style: none; /* For Internet Explorer and Edge */
+        }
+        .card-wrapper::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+        .card1 {
+            min-width: 300px;
+            height: 200px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+        .arrow-container {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .review-image {
+            width: 90px; /* Fixed width */
+            height: 90px; /* Fixed height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Ensures the image does not overflow */
+            border-radius: 50%; /* Makes sure the container is circular */
+            background-color: white; /* Optional: ensures a consistent background */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-image img {
+            width: 90px; /* Makes sure the image fills the container */
+            height: 80px; /* Ensures consistent height */
+            object-fit: cover; /* Maintains aspect ratio and fills the space */
+            border-radius: 50%; /* Ensures the image itself is circular */
         }
         .footer-nav {
             color: rgba(211, 211, 211, 0.63);
@@ -119,102 +284,32 @@
             color: white;
         }
 
-        .carousel {
-    height: 400px;
-    position: relative;
-}
 
-.carousel-inner {
-    height: 100%;
-}
-
-.carousel-item img {
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Ensure arrows are vertically centered */
-.carousel-control-prev,
-.carousel-control-next {
-    top: 50%;
-    transform: translateY(-50%);
-    height: 40px;
-    width: 40px;
-}
-
-        @media (max-width: 1050px){
-            .first-div{
-                flex-direction: column;
-                position: relative;
-                padding-bottom: 25%;
+        @media (max-width: 750px) {
+            .header{
+                padding-top: 30% !important;
+                padding-bottom: 30% !important;
             }
-            .third-div{
-                flex-direction: column;
-                position: relative;
-                padding-top:200px ;
+            .card {
+                width: 18rem; /* Reduces the card size on mobile screens */
             }
-            .img-container{
-                margin-top: auto;
-                position: absolute;
-                left:0;
+            .benefits{
+                font-size:25px;
+                margin-top: 20%;
             }
-            .img-container2{
-                margin-top: auto !important;
-                margin-left: 0px;
-                position: absolute;
-                right: 0 !important;
-                top: -250px;
+            .footer-nav{
+                font-size: medium;
             }
-            .img-container3{
-                margin-top: auto;
-                left:0;
-                bottom: -350px !important;
+            .image{
+                margin-right: -150px;
             }
-            .h1{
-                padding: 5%;
-            }
-            .second-div{
-                padding-top: 310px;
-                padding-bottom: 110px;
-            }
-            .slider-div{
-                width: 80% !important;
-                margin-top: 420px !important;
-            }
-        }
-        @media (max-width: 750px){
             .image-logo{
                 width: 10vw !important;
             }
-            .header{
-                padding-top: 30% !important;
-                padding-bottom: 25% !important;
-            }
-            .third-div{
-                padding-bottom: 25% !important;
-            }
-            .img-container{
-                width: 400px;
-                height: 400px;
-            }
-            .img-container2{
-                width: 400px;
-                height: 400px;
-            }
-            .img-container3{
-                width: 400px;
-                height: 400px;
-                bottom: -280px !important;
-            }
-            .img1{
-                width: 360px !important;
-                height: 360px !important;
-            }
-            .second-div{
-                padding-bottom: 32%;
-            }
-            .slider-div{
-                margin-top: 350px !important;
+            .map-section{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
             .designer-dis{
                 display: none;
@@ -225,78 +320,75 @@
             .break{
                 display: block !important;
             }
+            .parallax-section{
+                height: 50vh !important;
+            }
+            .parallax-content{
+                padding: 23vh 0 !important;
+            }
             
         }
-        @media (max-width: 480px){
-            .h1{
-                padding-right: 15% !important;
+        @media (min-width: 481px) and (max-width: 900px) {
+            .div-below-cards {
+                height: 65vw !important;  
             }
-            .header{
-                padding-top: 30% !important;
-                padding-bottom: 25% !important;
+        }
+
+
+        @media (max-width: 480px) {
+            .card {
+                width: 15rem; /* Further reduces the card size on very small screens */
+            }
+            .benefits{
+                font-size: large;
+                margin-top: 20%;
+            }
+            .footer-nav{
+                font-size: smaller;
             }
             .image-logo{
                 width: 10vw !important;
             }
-            .third-div{
-                padding-bottom: 25% !important;
+            .para-under-cards-sec{
+                font-size: 10px;
             }
-            .img-container{
-                width: 300px;
-                height: 300px;
+            .div-below-cards{
+            height: 85vw !important;
             }
-            .img-container2{
-                width: 300px;
-                height: 300px;
-                top: -150px;
+            .map-section{
+                height: 90vh !important;
+                padding-top: 300px;
+                padding-bottom: 300px;
             }
-            .img-container3{
-                width: 300px;
-                height: 300px;
-                bottom: -200px !important;
-            }
-            .img1{
-                width: 270px !important;
-                height: 270px !important;
-            }
-            h2{
-                padding-bottom: 10% !important;
-                font-size: 40px !important;
-            }
-            .second-div{
-                position: relative;
-                padding-top: 230px;
-                margin-left: 10vw; 
-                margin-right: 10vw;
-            }
-            .slider-div{
-                height: 200px !important;
-                width: 90% !important;
-                margin-bottom: 300px !important;
-                margin-top: 320px !important;
+            .map{
+                width: 300px !important;
             }
             .footer-nav{
                 font-size: smaller;
             }
         }
+        .inner-box{
+            color: white;
+        }
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .fade-in {
+        from {
             opacity: 0;
-            animation: fadeIn 1.5s ease-out forwards;
+            transform: translateY(20px);
         }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-        .fade-in-1 { animation-delay: 0.8s; }
-        .fade-in-2 { animation-delay: 1.1s; }
-        .fade-in-3 { animation-delay: 1.4s; }
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .fade-in-1 { animation-delay: 0.5s; }
+    .fade-in-2 { animation-delay: 0.8s; }
+    .fade-in-3 { animation-delay: 1.1s; }
 
     </style>
 </head>
@@ -309,10 +401,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="home.html">Home</a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">About</a>
+                    <a class="nav-link" href="course.html">Course</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="pricing.html">Pricing</a>
@@ -337,176 +429,260 @@
     </nav>
 
 
-
-    <!-- Hero Section -->
-    <div class="image-container" style="
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    overflow: hidden;
-    z-index: 100;
-">
-    <!-- Parallax Background (replacing ::before) -->
-    <div class="parallax-bg" id="hero-parallax-bg" style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('bg-home.webp');
-        background-size: cover;
-        background-position: center;
-        filter: blur(6px);
-        z-index: -1;
-        transform: translate3d(0,0,0);
-        will-change: transform;
-    "></div>
+    <div style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-around;
+        background: linear-gradient(135deg, #232526, #414345);
+        height: 150px;
+        width: 50px;
+        position: fixed;
+        bottom: 10%;
+        left: 5%;
+        z-index: 50;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    ">
+        <a href="https://api.whatsapp.com/send/?phone=9884177941&text&type=phone_number&app_absent=0">
+            <div class="inner-box" style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                <img src="whatsapp-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
+            </div>
+        </a>
+        <a href="https://www.instagram.com/kalpanakathirvelu/#">
+            <div class="inner-box" style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px;">
+                <img src="instagram-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;">
+            </div>
+        </a>
+        <a href="https://www.facebook.com/share/19CoFxqLmc/">
+            <div class="inner-box" style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px ;"><img src="facebook-icon.png" class="img-fluid image-logo" alt="..." style="width: 5vw;"></div>
+        </a>
+    </div>
     
-    <!-- Content -->
-    <h1 class="fade-in fade-in-1">KALPANA</h1>
-    <div class="fade-in fade-in-2" style="width: 50%; height: 2px; background-color: #FAFAFA;"></div>
-    <p class="hero-sec-par fade-in fade-in-3" style="margin-bottom: 0px !important;">CONTINUOUSLY EVOLVING.</p>
-</div>
 
-<script>
+
+    <div class="header" style="display: flex;justify-content: center; align-items: center; padding-top: 10%; padding-bottom: 10%;">
+        <h1 class="lexend-font fade-in fade-in-1 .h1" style="font-size: 50px; padding-left: 10%; padding-right: 10%; margin: 40px 0;">Transform Your Life: Enroll in Our Soulful Yoga Journey Today!</h1>
+    </div>
+
+
+
+    <!-- map-section -->
+    <div class="map-section lexend-font">
+        <div style="color: white; padding-left: 10%;display: flex;flex-direction: column; justify-content: center;">
+            <h1 style="text-align: left;">Come visit us</h1>
+            <p style="color: rgba(255, 255, 255, 0.349); height: 100%;">Located at heart of chennai.<br>For offline students we are open from<br> 9am to 5pm</p>
+            <a href="https://maps.app.goo.gl/8ffcVx3HtLrEkAe2A" class="map-button">
+                Open map
+            </a>
+        </div>
+        <div>
+            <iframe class="map" style="height: 300px;width:400px; border-radius: 10px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.374920277318!2d80.25296187381214!3d13.075408912596387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52660ca47bead9%3A0x79a6cf3618925308!2sChinna%20St%2C%20Egmore%2C%20Chennai%2C%20Tamil%20Nadu%20600008!5e0!3m2!1sen!2sin!4v1742043754395!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+
+    <!-- Cards Section -->
+     <h1 class="benefits">BENEFITS OF YOGA</h1>
+     <div style="width: 30%; height: 2px; background-color: #343a40; margin:auto"></div>
+    <div class="card-container">
+        <div class="left-card">
+            <div class="card lc1">
+                <div>
+                    <img class="card-img-top" src="card-pic1.jpg">
+                    <div class="card-body">
+                        <p class="card-text lexend-font"><span class="about-span">Improves Flexibility and Posture:</span><br><br>Regular yoga practice helps stretch and lengthen muscles, improving overall flexibility. Better flexibility reduces the risk of injuries and enhances posture, preventing back and neck pain caused by prolonged sitting or poor alignment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card lc2">
+                <img class="card-img-top" src="card-pic2.jpg">
+                <div class="card-body">
+                  <p class="card-text lexend-font"><span class="about-span">Reduces Stress and Anxiety:</span><br><br>Yoga incorporates deep breathing and meditation, which activate the body's relaxation response. This helps lower stress hormones, calm the mind, and promote mental well-being, making it an effective tool for managing anxiety and daily stress.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="right-card">
+            <div class="card rc1">
+                <img class="card-img-top" src="card-pic3.jpeg">
+                <div class="card-body">
+                  <p class="card-text lexend-font lexend-font"><span class="about-span">Boosts Strength and Balance:</span><br><br>Many yoga poses require the engagement of core and stabilizing muscles, improving strength and balance. Over time, this enhances physical endurance and coordination, benefiting athletes and individuals of all fitness levels.</p>
+                </div>
+            </div>
+
+            <div class="card rc2">
+                <div>
+                    <img class="card-img-top" src="card-pic4.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text lexend-font"><span class="about-span">Enhances Overall Health:</span><br><br>Yoga has been linked to improved heart health, better digestion, and enhanced immune function. It promotes mindful living, encourages healthier habits, and can help regulate blood pressure and blood sugar levels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="parallax-section" style="height: 70vh; position: relative; overflow: hidden; z-index: 100;">
+        <!-- Parallax Background -->
+        <div class="parallax-bg" id="inner-peace-parallax-bg" style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background-image: url('background-below-cards.jpg');
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+            transform: translate3d(0,0,0);
+        "></div>
+        
+        <!-- Content -->
+        <p class="parallax-content" style="
+            position: relative;
+            color: #f8f9fa;
+            letter-spacing: 2vw;
+            text-align: center;
+            margin: 0;
+            padding: 30vh 0;
+            z-index: 2;
+        ">INNER PEACE</p>
+    </div>
+    
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // First parallax effect
-        const heroParallaxBg = document.getElementById('hero-parallax-bg');
-        const heroContainer = document.querySelector('.image-container');
+        // Target ONLY this specific parallax section
+        const parallaxBg = document.getElementById('inner-peace-parallax-bg');
+        const parallaxSection = document.querySelector('.parallax-section');
+        
+        // Only proceed if our elements exist
+        if (!parallaxBg || !parallaxSection) return;
         
         window.addEventListener('scroll', function() {
             const scrollPosition = window.pageYOffset;
+            const sectionOffset = parallaxSection.offsetTop;
+            const sectionHeight = parallaxSection.offsetHeight;
             
-            // Handle first parallax
-            const heroOffset = heroContainer.offsetTop;
-            const heroHeight = heroContainer.offsetHeight;
-            if (scrollPosition > heroOffset - window.innerHeight && 
-                scrollPosition < heroOffset + heroHeight) {
-                const offset = (scrollPosition - heroOffset) * 0.7;
-                heroParallaxBg.style.transform = `translate3d(0, ${offset}px, 0)`;
+            // Only animate when in view
+            if (scrollPosition > sectionOffset - window.innerHeight && 
+                scrollPosition < sectionOffset + sectionHeight) {
+                
+                const offset = (scrollPosition - sectionOffset) * 0.7; // Adjust speed here
+                parallaxBg.style.transform = `translate3d(0, ${offset}px, 0)`;
             }
-            
         });
     });
     </script>
-    
 
 
 
-    <div class="header" style="display: flex;justify-content: center; align-items: center; padding-top: 12%;">
-        <h1 class="lexend-font fade-in fade-in-1 .h1" style="font-size: 50px; padding-left: 10%; padding-right: 10%;">My journey is the source of my strength!</h1>
-    </div>
-    <div class="lexend-font first-div">
-        <div style="color: white; padding: 7% 5% 5% 10%;">
-            <h2 class="fade-in fade-in-2" style="font-size: 50px; padding-bottom: 7%;">How yoga <br>affected me.</h2>
-            <p class="fade-in fade-in-3">Yoga has been a transformative part of my life, offering both physical and mental benefits that have helped me grow in ways I never expected. I started practicing yoga several years ago, initially as a way to relieve stress and improve my flexibility. Over time, I came to appreciate its deeper aspects, such as mindfulness, meditation, and self-awareness.
-            My practice has evolved with me. Whether it's the calming effect of restorative poses after a long day or the challenge of an intense flow sequence, yoga has taught me the importance of balance, patience, and persistence. I've studied various styles, from Hatha and Vinyasa to Yin, and have learned something valuable from each.</p>
-        </div>
-        <div style=" margin-right: 5%;">
-            <!-- Outer Circle -->
-            <div class="img-container">
-            <!-- Inner Circle (Image) -->
-                <img class="img1" src="cer-pic1.jpeg" style="
-                    width: 460px; /* 500 - (2 x 30px padding) */
-                    height: 460px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                ">
-            </div>
-        </div>
-    </div>
-
-
-    <!-- second div -->
-    <div class="second-div lexend-font" style="position: relative;">
-        <div style="margin-left: 20vw; 
-            margin-right: 20vw;"><h2 style="padding-bottom: 50px;">My Yoga Journey and IYA Certification</h2>
-            <p style="color: #343a40a9;">My yoga practice has been deeply shaped by the teachings of Andiappan Yoga and the guidance I received through the IYA International Yoga Academy. I am proud to hold an official IYA Certification in Yoga, a recognition that has not only deepened my practice but also refined my understanding of yoga’s transformative power.<br><br>The IYA International Yoga Academy is known for its comprehensive, high-quality training programs, and receiving my certification from them was a pivotal moment in my journey. The curriculum provided a holistic approach to yoga, combining physical postures, breath control, and meditation techniques with a deeper understanding of yoga philosophy and its therapeutic benefits.</p>
-        </div>
-    </div>
-
-
-<!-- third div -->
-    <div class="lexend-font third-div" style="position: relative;padding-bottom: 15%;"> 
-        <div>
-            <div class="img-container2" style="margin-top: -70%; margin-left: 7%;">
-                <img class="img1" src="cer-pic2.jpeg" style="
-                    width: 460px; /* 500 - (2 x 30px padding) */
-                    height: 460px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                    object-position: center top;
-                ">
-            </div>
-        </div>
-        <div style="color: white; padding: 7% 5% 5% 10%;">
-            <h2 style="font-size: 50px; padding-bottom: 7%;">Shivam Yoga <br>Studio</h2>
-            <p>My journey has now led me to Shivam Yoga Studio which is internationally recognized <b>Registered Yoga School (RYS 500)</b>, which represents a more advanced and holistic phase of my practice. Unlike anything I’ve experienced before, Shivam Yoga integrates dynamic postures with powerful breathing techniques, mantra chanting, and meditative awareness that go beyond the physical. It challenges not just the body, but also the inner self, pushing me to explore yoga as a lifestyle rather than a routine. Each session feels like a step closer to clarity, discipline, and inner peace. I now understand how yoga can be a path to transformation at every level—physically, mentally, emotionally, and spiritually. Shivam Yoga has helped me discover deeper layers of strength and stillness I never knew existed within me.</p>
-        </div>
-        <div class="img-container3" style="position: absolute; right: 0; bottom: -300px;">
-            <img class="img1" src="my-yoga-pose.jpeg" style="
-                width: 460px; /* 500 - (2 x 30px padding) */
-                height: 460px;
-                border-radius: 50%;
-                object-fit: cover;
-                object-position: center top;
-            ">
-        </div>
-    </div>
-    
-
-    <!-- slide show -->
-    <div class="slider-div" style="height: 50% ; width: 50%; margin-top: 350px;; margin-bottom: 10%; margin-left: auto;margin-right: auto;">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="slider-pic6.png" style="height: 400px; object-fit: contain;" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="yoga-pose1.png" style="height: 400px; object-fit: contain;" alt="second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="slider-pic5.png" style="height: 400px; object-fit: contain;" alt="Third slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="slider-pic7.png" style="height: 400px; object-fit:contain;" alt="Fourth slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="slider-pic3.jpeg" style="height: 400px; object-fit:contain;" alt="Fifth slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="slider-pic1.jpeg" style="height: 400px; object-fit:contain;" alt="Sixth slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="slider-pic2.jpeg" style="height: 400px; object-fit:contain;" alt="Seventh slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="slider-pic8.png" style="height: 400px; object-fit:contain;" alt="Eight slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="slider-pic4.jpeg" style="height: 400px; object-fit:contain;" alt="Ninth slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" style="background-color: black; padding: 20px;
-    background-size: 100% 100%;" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
+    <!-- about section -->
+    <div class="about-div" style="display: flex; position: relative; align-items: center; overflow: hidden;">
+        <div class="about-inner" style="flex: 1; z-index: 2; padding: 0% 15% 2% 0%;">
+            <h1 class="benefits" style="text-shadow: 0px 0px 10px grey; color: #232526;">ABOUT ME</h1>
+            <div style="width: 20%; height: 2px; background-color: #232526; margin:auto"></div>
+            <p class="about-para lexend-font" style="color:#232526; font-size: larger; padding: 5% 10%; margin-bottom: 0px; text-shadow: 0px 0px 5px white;">
+                Hey there! I’m Kalpana — a yoga teacher, a learner, and someone who’s been on a beautiful journey of transformation. I started this website to share what I’ve learned, and I’m super excited to let you know that I’ve just launched my very own yoga course!
+                <br><br>
+                This course is my way of helping others find balance, joy, and a little more peace in their everyday lives — just like I did. If you’re starting high school or just looking to try something new, I hope my story inspires you to follow your heart and do what lights you up!
+                
+                
+            </p>
+            <a href="pricing.html" style="text-decoration: none;">
+                <div class="button-container">
+                    <button type="button" class="btn button-about">Price</button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right arrow-icon" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                    </svg>
+                </div>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" style="background-color: black; padding: 20px;
-    background-size: 100% 100%;" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
+            
+        </div>
+        <!-- Image Section -->
+        <div class="image-sec">
+            <img src="yoga-pose1.png" class="image" alt="Yoga Image">
+        </div>
     </div>
-    
-    <!-- <div style=" width: 10vw; height: 10vw; margin-top: 350px;; margin-bottom: 10%; background-color: #495057; margin-left: auto;margin-right: auto;"></div> -->
-    
+
+
+    <div class="card-container position-relative">  
+        <div class="card-wrapper d-flex flex-row" id="cardWrapper">
+            <div class="card1 p-3" style="padding-bottom: 0px !important; z-index: 100;">
+                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
+                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+                        <img src="p1-abi.jpg" class="rounded-circle img-fluid">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h5 class="fw-semibold text-secondary">Abinaya B</h5>
+                    <p class="text-muted small mt-2">I learnt about lot's of yoga poses and it's benefits. Excellent work.</p>
+                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
+                </div>
+            </div>
+            <div class="card1 p-3">
+                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
+                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+                        <img src="p2-mani.jpeg" class="rounded-circle img-fluid">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h5 class="fw-semibold text-secondary">Mani Varman</h5>
+                    <p class="text-muted small mt-2">The session was informative.</p>
+                    <p class="mt-2 fw-bold text-warning">GOOD!</p>
+                </div>
+            </div>
+            <div class="card1 p-3">
+                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
+                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+                        <img src="p3-kathir.jpeg" class="rounded-circle img-fluid" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h5 class="fw-semibold text-secondary">Kathirvelu</h5>
+                    <p class="text-muted small mt-2">The course content was insightful, and the instructor explained concepts well.</p>
+                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
+                </div>
+            </div>
+            <div class="card1 p-3">
+                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
+                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+                        <img src="p4-shruthi-pic.jpeg" class="rounded-circle img-fluid">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h5 class="fw-semibold text-secondary">Shruthi B</h5>
+                    <p class="text-muted small mt-2">Great course and had more interactive activities.</p>
+                    <p class="mt-2 fw-bold text-primary">EXCELLENT!</p>
+                </div>
+            </div>
+            <div class="card1 p-3">
+                <div class="review-image d-flex justify-content-center" style="max-height: 90px; max-width: 90px; margin-top: -80px;">
+                    <div class="bg-white p-1 rounded-circle"  style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+                        <img src="p5-kawin.jpg" class="rounded-circle img-fluid">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h5 class="fw-semibold text-secondary">Kawin</h5>
+                    <p class="text-muted small mt-2"> The teaching was very good and very much useful. Thank you.</p>
+                    <p class="mt-2 fw-bold text-warning">GOOD!</p>
+                </div>
+            </div>
+            <div class="card1 p-3" style="display: flex; justify-content: center; align-items: center;">
+                <a href="review.html">
+                    <img src="plus-icon.avif" style="width: 150px;">
+                </a>
+            </div>
+        </div>
+        <div class="arrow-container">
+            <button class="btn btn-secondary" onclick="scrollCards(-1)"><i class="bi bi-arrow-left"></i></button>
+            <button class="btn btn-secondary" onclick="scrollCards(1)"><i class="bi bi-arrow-right"></i></button>
+        </div>
+    </div>
+
 
     <!-- footer section -->
     <footer class="py-5" style="z-index: 100; position: relative; background-color: #37393a">
@@ -514,8 +690,8 @@
             <div class="d-flex justify-content-center" style="gap: 2rem; color: rgba(211, 211, 211, 0.63);">
                 <!-- Column 1 -->
                 <div class="d-flex flex-column align-items-center" style="gap: 0.5rem;">
-                  <a href="home.html" class="footer-nav text-decoration-none">Home</a>
-                  <a href="index.html" class="footer-nav text-decoration-none" style="padding-bottom: 1rem;">About</a>
+                    <a href="index.html" class="footer-nav text-decoration-none">Home</a>
+                    <a href="course.html" class="footer-nav text-decoration-none" style="padding-bottom: 1rem;">Course</a>
                 </div>
               
                 <!-- Column 2 -->
@@ -575,8 +751,84 @@
             </div>
         </div>
       </footer>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function handleScroll() {
+                let triggerHeight = window.innerHeight * 0.8; // 30% of viewport height
+
+                let cards = document.querySelectorAll('.lc1, .lc2, .rc1, .rc2');
+
+                cards.forEach(card => {
+                    let cardPos = card.getBoundingClientRect().top;
+
+                    if (cardPos < triggerHeight) {
+                        card.classList.add('show');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Run once to check if elements are already in view on load
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            function handleScroll() {
+                let triggerHeight = window.innerHeight * 0.9; // 30% of viewport height
+                let imagesec = document.querySelector(".image-sec");
+
+                if (imagesec) {
+                    let imagesecpos = imagesec.getBoundingClientRect().top;
+
+                    if (imagesecpos < triggerHeight) {
+                        imagesec.classList.add("visible");
+                    }
+                }
+            }
+
+            window.addEventListener("scroll", handleScroll);
+            handleScroll(); // Run on page load in case it's already in view
+        });
+        document.querySelectorAll('.dropdown-toggle').forEach(function (dropdown) {
+    dropdown.addEventListener('click', function (event) {
+        event.stopPropagation(); // Prevents event from bubbling to `document`
+
+        let menu = this.nextElementSibling; // Get the dropdown menu
+
+        // Toggle only the clicked dropdown
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show'); // Close if open
+        } else {
+            document.querySelectorAll('.dropdown-menu').forEach(function (el) {
+                el.classList.remove('show'); // Close all other dropdowns
+            });
+            menu.classList.add('show'); // Open the clicked dropdown
+        }
+    });
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown-menu').forEach(function (el) {
+        el.classList.remove('show');
+    });
+});
+
+
+
+    </script>
+    <script>
+        function scrollCards(direction) {
+            const container = document.getElementById("cardWrapper");
+            container.scrollBy({ left: direction * 220, behavior: "smooth" });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
